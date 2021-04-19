@@ -2,6 +2,7 @@
   display: block;
   position: relative;
   width: 100%;
+  font-size: var(--form-font-size);
 
   input {
     position: absolute;
@@ -21,16 +22,16 @@
     position: relative;
     padding-left: 30px;
 
-    &:before {
+    &::before {
       content: '';
       position: absolute;
-      @include square(22px, #fff, 6px);
+      @include square(20px, #fff, 6px);
       border: 1px solid $color-input-border;
       left: 0;
       @include align(false, true);
     }
 
-    &:after {
+    &::after {
       content: '';
       position: absolute;
       opacity: 0;

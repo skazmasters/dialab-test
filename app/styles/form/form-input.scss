@@ -2,13 +2,13 @@
   position: relative;
 
   input {
+    width: 100%;
+    height: var(--input-height);
+    padding: 0 10px;
+    font-size: var(--form-font-size);
     background: #FFFFFF;
     border: 1px solid $color-input-border;
     border-radius: 8px;
-    padding: 0 10px;
-    height: 44px;
-    font-size: 16px;
-    width: 100%;
 
     @include placeholder {
       color: $color-placeholder;
