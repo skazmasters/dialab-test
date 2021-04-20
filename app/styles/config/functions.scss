@@ -85,3 +85,7 @@ input: 10px, output: 10px
 @function hsla-calc($color, $opacity) {
   @return hsla(hue($color), saturation($color), lightness($color), $opacity);
 }
+
+@function hexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
+}

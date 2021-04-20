@@ -1,4 +1,7 @@
 :root {
   --input-height: 38px;
   --form-font-size: 14px;
+  --base-font-color: #{$baseFontColor};
+  --base-font-size: #{$baseFontSize};
+  --base-font-family: #{$baseFontColor};
 }

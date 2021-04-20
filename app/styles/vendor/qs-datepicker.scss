@@ -1,9 +1,8 @@
 .qs {
   &-datepicker-container {
-    font-family: Inter, -apple-system, BlickMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: inherit;
     border-radius: 8px;
     border: 1px solid #DFE3EC;
-
 
     @media (hover: none) {
       display: none;
@@ -11,7 +10,7 @@
   }
 
   &-controls {
-    background: $color-white;
+    background: var(--color-white);
     border-bottom: 1px solid #DFE3EC;
     padding: 5px;
   }
@@ -49,7 +48,7 @@
 
   &-current {
     text-decoration: none;
-    color: $color-primary;
+    color: var(--color-primary);
   }
 
   &-active {

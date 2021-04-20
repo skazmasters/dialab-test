@@ -1,6 +1,54 @@
 <header class="header page__header">
   <div class="container">
-    <h2>HEADER</h2>
+    <div class="header-top">
+      <div class="header-top__logo">
+        {{>components/image img="common/logo" ext="png" alt="Логотип компании"}}
+      </div>
+
+      <div class="header-top__user user-profile">
+        <button class="user-profile__dropdown">
+          <span class="user-profile__dropdown-icon material-icons">person</span>
+          <span class="user-profile__dropdown-label">Тест Докторов</span>
+        </button>
+        <div class="user-profile__toggle">
+          <ul class="user-profile__toggle-actions">
+            <li class="user-profile__toggle-item">
+              <a href="#" class="user-profile__toggle-link">Выход</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="header-menu">
+      <nav class="header-menu__nav header-nav">
+        <ul class="header-nav__list">
+          <li class="header-nav__item">
+            <a href="#" class="header-nav__link">Новая заявка</a>
+          </li>
+          <li class="header-nav__item">
+            <a href="#" class="header-nav__link">Квитанции</a>
+          </li>
+          <li class="header-nav__item">
+            <a href="#" class="header-nav__link">Заказы</a>
+          </li>
+          <li class="header-nav__item">
+            <a href="#" class="header-nav__link">Пациенты</a>
+          </li>
+          <li class="header-nav__item">
+            <a href="#" class="header-nav__link">Отчеты</a>
+          </li>
+          <li class="header-nav__item">
+            <a href="#" class="header-nav__link">Справочники</a>
+          </li>
+          <li class="header-nav__item">
+            <a href="#" class="header-nav__link">Настройки</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-menu__burger">
+        {{>components/mobile-menu}}
+      </div>
+    </div>
   </div>
 </header>
 

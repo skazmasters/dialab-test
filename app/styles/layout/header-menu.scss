@@ -1,0 +1,10 @@
+.header-menu {
+  display: flex;
+  align-items: center;
+
+  &__burger {
+    @include media(tablet, up) {
+      display: none;
+    }
+  }
+}

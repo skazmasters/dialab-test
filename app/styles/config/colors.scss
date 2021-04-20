@@ -1,34 +1,50 @@
-// Colors
 $color-white: #FFFFFF;
 $color-black: #000000;
 $color-red: #FF0000;
 
-$color-primary: #DD6900;
+$color-primary: #64219E;
 $color-primary-hover: darken($color-primary, 5%);
 $color-secondary: #1B74FD;
 $color-secondary-hover: darken($color-secondary, 5%);
 
 $color-placeholder: rgba(5, 36, 51, 0.2);
 $color-input-border: #DAE4ED;
+$color-bg-light: #F7F8FA;
+
+$color-gray-100: #363C4E;
+$color-gray-100-overlay: #{transparentize($color-gray-100, 0.3)};
+$color-gray-100-70: #{transparentize($color-gray-100, 0.3)};
+$color-gray-80: #717784;
+$color-gray-70: #7B88A5;
+$color-gray-60: #ADB3C5;
+$color-gray-40: #DFE3EC;
+$color-gray-20: #F2F4F8;
+$color-gray-10: #F6F9FF;
+
 
 :root {
-  // Gray
-  --color-gray-100: #363C4E;
-  --color-gray-100-overlay: #{transparentize(#363C4E, 0.3)};
-  --color-gray-80: #717784;
-  --color-gray-70: #7B88A5;
-  --color-gray-60: #ADB3C5;
-  --color-gray-40: #DFE3EC;
-  --color-gray-20: #F2F4F8;
-  --color-gray-10: #F6F9FF;
-}
+  // Colors
+  --color-white: #{$color-white};
+  --color-black: #{$color-black};
+  --color-red: #{$color-red};
 
-// Gray
-$color-gray-100: var(--color-gray-100);
-$color-gray-100-70: var(--color-gray-100-overlay);
-$color-gray-80: var(--color-gray-80);
-$color-gray-70: var(--color-gray-70);
-$color-gray-60: var(--color-gray-60);
-$color-gray-40: var(--color-gray-40);
-$color-gray-20: var(--color-gray-20);
-$color-gray-10: var(--color-gray-10);
+  --color-primary: #{$color-primary};
+  --color-primary-hover: #{$color-primary-hover};
+  --color-secondary: #{$color-secondary};
+  --color-secondary-hover: #{$color-secondary-hover};
+
+  --color-placeholder: #{$color-placeholder};
+  --color-input-border: #{$color-input-border};
+  --color-bg-light: #{$color-bg-light};
+
+  // Gray
+  --color-gray-100: #{$color-gray-100};
+  --color-gray-100-70: #{$color-gray-100-overlay};
+  --color-gray-80: #{$color-gray-80};
+  --color-gray-70: #{$color-gray-70};
+  --color-gray-60: #{$color-gray-60};
+  --color-gray-40: #{$color-gray-40};
+  --color-gray-20: #{$color-gray-20};
+  --color-gray-10: #{$color-gray-10};
+
+}
