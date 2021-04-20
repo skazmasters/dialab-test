@@ -1,16 +1,32 @@
 .user-profile {
   &__dropdown {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: var(--color-primary-light);
+    color: var(--color-primary);
+    border-radius: 8px;
+    transition: background-color 350ms ease;
+
+    &:hover {
+      background-color: var(--color-primary-light-hover);
+    }
   }
 
-  &__dropdown-icon {
-    font-size: 20px;
+  &__dropdown-caret {
+    width: 12px;
+    height: 12px;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
   }
 
   &__dropdown-label {
     display: block;
-    margin-left: 10px;
+    margin-left: 15px;
     line-height: 20px;
     font-size: 16px;
   }

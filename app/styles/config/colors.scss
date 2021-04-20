@@ -4,6 +4,8 @@ $color-red: #FF0000;
 
 $color-primary: #64219E;
 $color-primary-hover: darken($color-primary, 5%);
+$color-primary-light: lighten($color-primary, 57%);
+$color-primary-light-hover: darken($color-primary-light, 3%);
 $color-secondary: #1B74FD;
 $color-secondary-hover: darken($color-secondary, 5%);
 
@@ -30,6 +32,8 @@ $color-gray-10: #F6F9FF;
 
   --color-primary: #{$color-primary};
   --color-primary-hover: #{$color-primary-hover};
+  --color-primary-light: #{$color-primary-light};
+  --color-primary-light-hover: #{$color-primary-light-hover};
   --color-secondary: #{$color-secondary};
   --color-secondary-hover: #{$color-secondary-hover};
 

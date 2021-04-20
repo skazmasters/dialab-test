@@ -2,12 +2,17 @@
   <div class="container">
     <div class="header-top">
       <div class="header-top__logo">
-        {{>components/image img="common/logo" ext="png" alt="Логотип компании"}}
+        {{>components/image no-2x=1 img="common/logo" ext="png" alt="Логотип компании"}}
       </div>
 
       <div class="header-top__user user-profile">
         <button class="user-profile__dropdown">
-          <span class="user-profile__dropdown-icon material-icons">person</span>
+          <!--          <span class="user-profile__dropdown-icon material-icons">person</span>-->
+          <span class="user-profile__dropdown-caret">
+            <svg focusable="false" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.88 3.33337L8 9.44004L14.12 3.33337L16 5.21337L8 13.2134L0 5.21337L1.88 3.33337Z" fill='currentColor'/>
+            </svg>
+          </span>
           <span class="user-profile__dropdown-label">Тест Докторов</span>
         </button>
         <div class="user-profile__toggle">

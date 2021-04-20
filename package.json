@@ -1,7 +1,7 @@
 {
-  "name": "template-handlebars",
-  "version": "2.0.0",
-  "description": "Starter for HTML development.",
+  "name": "dialab-test",
+  "version": "0.0.1",
+  "description": "Test task for DiaLab.",
   "private": true,
   "engines": {
     "node": ">=12"
