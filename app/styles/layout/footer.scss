@@ -1,3 +1,13 @@
 .footer {
 
 }
+
+.footer-top {
+  padding: 25px 0;
+  border-top: 1px solid var(--color-primary);
+
+  &__brand-title {
+    text-align: center;
+    font-size: 14px;
+  }
+}

@@ -5,8 +5,8 @@
         {{>components/image no-2x=1 img="common/logo" ext="png" alt="Логотип компании"}}
       </div>
 
-      <div class="header-top__user user-profile">
-        <button class="user-profile__dropdown">
+      <div class="header-top__user user-profile dropdown-box js-toggle">
+        <button class="user-profile__dropdown dropdown-box__btn js-toggle__btn">
           <!--          <span class="user-profile__dropdown-icon material-icons">person</span>-->
           <span class="user-profile__dropdown-caret">
             <svg focusable="false" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
@@ -15,8 +15,8 @@
           </span>
           <span class="user-profile__dropdown-label">Тест Докторов</span>
         </button>
-        <div class="user-profile__toggle">
-          <ul class="user-profile__toggle-actions">
+        <div class="user-profile__toggle dropdown-box__container js-toggle__container">
+          <ul class="user-profile__toggle-actions dropdown-box__container-inner">
             <li class="user-profile__toggle-item">
               <a href="#" class="user-profile__toggle-link">Выход</a>
             </li>
@@ -28,7 +28,7 @@
       <nav class="header-menu__nav header-nav">
         <ul class="header-nav__list">
           <li class="header-nav__item">
-            <a href="#" class="header-nav__link">Новая заявка</a>
+            <span class="header-nav__link active">Новая заявка</span>
           </li>
           <li class="header-nav__item">
             <a href="#" class="header-nav__link">Квитанции</a>
