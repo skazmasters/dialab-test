@@ -52,8 +52,9 @@
     position: absolute;
     top: 100%;
     left: 0;
-    right: 0;
+    //right: 0;
     z-index: z(overlay) + 1;
+    width: 220px;
     margin-top: 5px;
     background: var(--color-white);
     box-shadow: 0 2px 3px rgba(var(--color-primary-rgb), .2);

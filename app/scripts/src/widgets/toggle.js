@@ -23,6 +23,7 @@ class Toggle extends Widget {
 
     this.$node.classList.toggle('active')
     this.$overlay.classList.add('active')
+    this.$container.style.width = `${this.$node.getBoundingClientRect().width}px`
 
     this.$overlay.addEventListener('click', this.onCloseClick)
   }
