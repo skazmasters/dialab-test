@@ -19,5 +19,5 @@ function isClickOutsideElement(event, element) {
   return !target;
 }
 
-window.isClickOutsideElement = triggerInputChange;
+window.isClickOutsideElement = isClickOutsideElement;
 window.triggerInputChange = triggerInputChange;

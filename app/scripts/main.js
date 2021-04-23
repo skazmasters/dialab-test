@@ -17,10 +17,10 @@ import './src/utils/scroll-control';
 import './src/utils/scroll-to';
 import './src/utils/preloader';
 import './src/utils/vh-hack';
-import './src/utils/mobile-debug';
+// import './src/utils/mobile-debug';
 import './src/utils/input-filter';
 
-import './src/widgets/example';
+// import './src/widgets/example';
 import './src/widgets/accord';
 import './src/widgets/toggle';
 
