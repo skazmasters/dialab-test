@@ -1,38 +1,73 @@
 .form-field {
-  padding-bottom: 26px;
-  position: relative;
-  width: 100%;
+  $bg-color: #424242;
+  $hl-color: #2196F3;
+  $muted-color: mix(white, $bg-color, 70%);
+  $trans-time: 300ms;
+  $width: 320px;
 
-  @include media(mobile){
-    padding-bottom: 22px;
+  position: relative;
+
+  textarea {
+    resize: none;
+  }
+
+  &__input,
+  &__textarea {
+    background: none;
+    color: var(--color-gray-100);
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: $width;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid var(--color-gray-60);
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus ~ .form-field__label,
+    &:valid ~ .form-field__label {
+      top: -14px;
+      font-size: 12px;
+      color: var(--color-primary);
+    }
+
+    &:focus ~ .form-field__bar:before {
+      width: $width;
+    }
+  }
+
+  &__input[type="password"] {
+    letter-spacing: 0.3em;
   }
 
   &__label {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
-    letter-spacing: 0.02em;
-    display: block;
-    color: #000;
-  }
-
-  &__input {
-    margin-top: 5px;
-  }
-
-  &__note {
     position: absolute;
-    left: 0;
-    bottom: 0;
-    font-size: 14px;
-    line-height: 20px;
-    display: block;
-    color: #000;
-    font-style: italic;
+    left: 5px;
+    top: 10px;
+    color: var(--color-gray-60);
+    font-size: 16px;
+    font-weight: normal;
+    transition: $trans-time ease all;
+    pointer-events: none;
+  }
 
-    @include media(mobile) {
-      font-size: 12px;
-      line-height: 150%;
+  &__bar {
+    position: relative;
+    display: block;
+    width: $width;
+
+    &:before {
+      content: '';
+      height: 2px;
+      width: 0;
+      bottom: 0;
+      position: absolute;
+      background: var(--color-primary);
+      transition: $trans-time ease all;
+      left: 0;
     }
   }
 }

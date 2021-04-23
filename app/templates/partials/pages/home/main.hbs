@@ -1,0 +1,30 @@
+<div class="layout-main">
+  <div class="container gap-t-30">
+    <p class="text-sm text-right">
+      <a class="link-primary" href="#">Помощь</a>
+    </p>
+
+    {{#>global/section title="Создание заказа"}}
+      {{#>global/form-section title="Данные пациента"}}
+
+        <div class="flex-columns">
+          {{>ui/form-field
+            id="ticketNumber"
+            label="№ Квитанции"
+            required=1
+          }}
+          {{>ui/form-field
+            id="ticketNumber2"
+            label="№ Квитанции"
+            required=1
+          }}
+          {{>ui/form-field
+            id="ticketNumber3"
+            label="№ Квитанции"
+            required=1
+          }}
+        </div>
+      {{/global/form-section}}
+    {{/global/section}}
+  </div>
+</div>

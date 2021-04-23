@@ -71,3 +71,42 @@
     }
   }
 }
+
+.text-right {
+  text-align: right;
+}
+
+.text-sm {
+  font-size: 12px;
+}
+
+.link-primary {
+  color: var(--color-primary);
+
+  &:hover {
+    color: var(--color-primary-hover);
+    text-decoration: underline;
+  }
+}
+
+.gap-t-20 {
+  > * + * {
+    margin-top: 20px;
+  }
+}
+
+.gap-t-30 {
+  > * + * {
+    margin-top: 30px;
+  }
+}
+
+.bg-white {
+  background-color: var(--color-white);
+}
+
+.flex-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
