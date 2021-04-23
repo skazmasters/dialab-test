@@ -43,8 +43,8 @@
   }
 }
 
-@mixin fill($digit: 0) {
-  position: absolute;
+@mixin fill($state: absolute, $digit: 0) {
+  position: $state;
   top: $digit;
   bottom: $digit;
   left: $digit;

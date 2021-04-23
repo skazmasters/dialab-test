@@ -21,7 +21,7 @@ class Toggle extends Widget {
   onClick(e) {
     e.preventDefault()
 
-    this.$container.classList.toggle('active')
+    this.$node.classList.toggle('active')
     this.$overlay.classList.add('active')
 
     this.$overlay.addEventListener('click', this.onCloseClick)
@@ -42,7 +42,7 @@ class Toggle extends Widget {
     };
 
     this.$container.addEventListener(endEvents.transition, handler)
-    this.$container.classList.remove('active')
+    this.$node.classList.remove('active')
   }
 
   static init($el) {

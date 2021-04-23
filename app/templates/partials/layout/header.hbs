@@ -7,18 +7,21 @@
 
       <div class="header-top__user user-profile dropdown-box js-toggle">
         <button class="user-profile__dropdown dropdown-box__btn js-toggle__btn">
-          <!--          <span class="user-profile__dropdown-icon material-icons">person</span>-->
-          <span class="user-profile__dropdown-caret">
+          <span class="dropdown-box__caret">
             <svg focusable="false" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1.88 3.33337L8 9.44004L14.12 3.33337L16 5.21337L8 13.2134L0 5.21337L1.88 3.33337Z" fill='currentColor'/>
+              <path d="M1.88 3.33337L8 9.44004L14.12 3.33337L16 5.21337L8 13.2134L0 5.21337L1.88 3.33337Z"
+                    fill='currentColor' />
             </svg>
           </span>
-          <span class="user-profile__dropdown-label">Тест Докторов</span>
+          <span class="dropdown-box__label">Тест Докторов</span>
         </button>
-        <div class="user-profile__toggle dropdown-box__container js-toggle__container">
-          <ul class="user-profile__toggle-actions dropdown-box__container-inner">
-            <li class="user-profile__toggle-item">
-              <a href="#" class="user-profile__toggle-link">Выход</a>
+        <div class="dropdown-box__container js-toggle__container">
+          <ul class="dropdown-box__container-inner">
+            <li class="dropdown-box__item">
+              <a href="#" class="dropdown-box__link">
+                <span class="dropdown-box__icon material-icons">logout</span>
+                Выход
+              </a>
             </li>
           </ul>
         </div>
@@ -42,8 +45,32 @@
           <li class="header-nav__item">
             <a href="#" class="header-nav__link">Отчеты</a>
           </li>
-          <li class="header-nav__item">
-            <a href="#" class="header-nav__link">Справочники</a>
+          <li class="header-nav__item dropdown-box dropdown-box--hover">
+            <a href="#" class="header-nav__link dropdown-box__btn">
+              <span class="dropdown-box__label">Справочники</span>
+              <span class="dropdown-box__caret">
+            <svg focusable="false" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.88 3.33337L8 9.44004L14.12 3.33337L16 5.21337L8 13.2134L0 5.21337L1.88 3.33337Z"
+                    fill='currentColor' />
+            </svg>
+          </span>
+            </a>
+            <div class="dropdown-box__container">
+              <ul class="dropdown-box__container-inner">
+                <li class="dropdown-box__item">
+                  <a href="#" class="dropdown-box__link">Действие</a>
+                </li>
+                <li class="dropdown-box__item">
+                  <a href="#" class="dropdown-box__link">Действие</a>
+                </li>
+                <li class="dropdown-box__item">
+                  <a href="#" class="dropdown-box__link">Действие</a>
+                </li>
+                <li class="dropdown-box__item">
+                  <a href="#" class="dropdown-box__link">Действие</a>
+                </li>
+              </ul>
+            </div>
           </li>
           <li class="header-nav__item">
             <a href="#" class="header-nav__link">Настройки</a>
