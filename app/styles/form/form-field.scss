@@ -3,9 +3,40 @@
   $hl-color: #2196F3;
   $muted-color: mix(white, $bg-color, 70%);
   $trans-time: 300ms;
-  $width: 320px;
+  $width: 100%;
 
-  position: relative;
+  padding-top: 15px;
+
+  &__container {
+    position: relative;
+    display: block;
+    border-bottom: 1px solid var(--color-gray-60);
+
+    &:focus-within {
+      &::before {
+        width: 100%;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--color-primary);
+      transition: $trans-time ease all;
+    }
+
+    &--actions {
+      display: flex;
+
+      .form-field__input {
+        flex: 1 1 100%;
+      }
+    }
+  }
 
   textarea {
     resize: none;
@@ -13,15 +44,15 @@
 
   &__input,
   &__textarea {
-    background: none;
-    color: var(--color-gray-100);
-    font-size: 18px;
-    padding: 10px 10px 10px 5px;
     display: block;
     width: $width;
+    min-height: 42px;
+    padding: 10px 10px 10px 5px;
+    color: var(--color-gray-100);
+    font-size: 18px;
+    background: none;
     border: none;
     border-radius: 0;
-    border-bottom: 1px solid var(--color-gray-60);
 
     &:focus {
       outline: none;
@@ -33,10 +64,6 @@
       font-size: 12px;
       color: var(--color-primary);
     }
-
-    &:focus ~ .form-field__bar:before {
-      width: $width;
-    }
   }
 
   &__input[type="password"] {
@@ -46,28 +73,31 @@
   &__label {
     position: absolute;
     left: 5px;
+    right: 0;
     top: 10px;
     color: var(--color-gray-60);
     font-size: 16px;
     font-weight: normal;
     transition: $trans-time ease all;
     pointer-events: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 
-  &__bar {
-    position: relative;
-    display: block;
-    width: $width;
+  &__actions {
+    flex: 0 0 auto;
+    display: flex;
 
-    &:before {
-      content: '';
-      height: 2px;
-      width: 0;
-      bottom: 0;
-      position: absolute;
-      background: var(--color-primary);
-      transition: $trans-time ease all;
-      left: 0;
+    button {
+      display: block;
+      margin: 0;
+      padding: 0 10px;
+      color: var(--color-gray-60);
+
+      &:hover {
+        color: var(--color-primary);
+      }
     }
   }
 }

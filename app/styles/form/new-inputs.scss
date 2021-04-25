@@ -1,11 +1,11 @@
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
   input[type='checkbox'],
   input[type='radio'] {
-    --active: #275EFE;
+    --active: var(--color-primary);
     --active-inner: #fff;
-    --focus: 2px rgba(39, 94, 254, .3);
+    --focus: 2px rgba(var(--color-primary-rgb), .3);
     --border: #BBC1E1;
-    --border-hover: #275EFE;
+    --border-hover: var(--color-primary-hover);
     --background: #fff;
     --disabled: #F6F8FF;
     --disabled-inner: #E1E6F9;
@@ -100,7 +100,7 @@
         border: 2px solid var(--active-inner);
         border-top: 0;
         border-left: 0;
-        transform: translate(-50%,-50%) rotate(var(--r, 20deg));
+        transform: translate(-45%,-60%) rotate(var(--r, 20deg));
       }
 
       &:checked {

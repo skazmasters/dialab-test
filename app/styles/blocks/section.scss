@@ -9,4 +9,10 @@
       margin-top: 20px;
     }
   }
+
+  &__content {
+    > * + * {
+      margin-top: 40px;
+    }
+  }
 }
