@@ -1,11 +1,37 @@
 .header-menu {
   display: flex;
   align-items: center;
-  padding-top: 10px;
 
-  &__burger {
+  &__nav {
+    @include media(tablet) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: z(header);
+      transform: translateY(100%);
+      transform-origin: top center;
+      background-color: var(--color-white);
+      @include transition;
+    }
+
+    .menu-opened & {
+      @include media(tablet) {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &__icon {
     @include media(tablet, up) {
       display: none;
+    }
+
+    .menu-opened & {
+      @include media(tablet) {
+        z-index: z(header);
+      }
     }
   }
 }

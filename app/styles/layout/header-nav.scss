@@ -2,12 +2,21 @@
   &__list {
     display: flex;
     align-items: center;
-    //margin: 0 -10px;
-  }
 
+    @include media(tablet) {
+      flex-wrap: wrap;
+      margin-top: 65px;
+    }
+  }
 
   &__item {
     margin-left: 30px;
+
+    @include media(tablet) {
+      flex: 1 1 100%;
+      margin-left: 0;
+      margin-top: 15px;
+    }
 
     &:first-child {
       margin-left: 0;
@@ -22,6 +31,10 @@
     font-weight: 500;
     border-bottom: 2px solid transparent;
 
+    @include media(tablet) {
+      padding: 10px 15px 8px;
+    }
+
     &:hover {
       color: var(--color-gray-100);
     }
@@ -30,6 +43,10 @@
       color: var(--color-primary);
       border-color: var(--color-primary);
       cursor: default;
+
+      @include media(tablet) {
+        border-color: transparent;
+      }
     }
   }
 }

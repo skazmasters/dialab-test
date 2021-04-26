@@ -1,6 +1,6 @@
 <header class="header page__header">
-  <div class="container">
-    <div class="header-top">
+  <div class="header__container container">
+    <div class="header__top header-top">
       <div class="header-top__logo">
         {{>components/image no-2x=1 img="common/logo" ext="png" alt="Логотип компании"}}
       </div>
@@ -27,7 +27,7 @@
         </div>
       </div>
     </div>
-    <div class="header-menu">
+    <div class="header__menu header-menu">
       <nav class="header-menu__nav header-nav">
         <ul class="header-nav__list">
           <li class="header-nav__item">
@@ -58,16 +58,16 @@
             <div class="dropdown-box__container">
               <ul class="dropdown-box__container-inner">
                 <li class="dropdown-box__item">
-                  <a href="#" class="dropdown-box__link">Действие</a>
+                  <a href="#" class="dropdown-box__link">Ссылка</a>
                 </li>
                 <li class="dropdown-box__item">
-                  <a href="#" class="dropdown-box__link">Действие и очень длинное название</a>
+                  <a href="#" class="dropdown-box__link">Ссылка и очень длинное название</a>
                 </li>
                 <li class="dropdown-box__item">
-                  <a href="#" class="dropdown-box__link">Действие</a>
+                  <a href="#" class="dropdown-box__link">Ссылка</a>
                 </li>
                 <li class="dropdown-box__item">
-                  <a href="#" class="dropdown-box__link">Действие</a>
+                  <a href="#" class="dropdown-box__link">Ссылка</a>
                 </li>
               </ul>
             </div>
@@ -77,7 +77,7 @@
           </li>
         </ul>
       </nav>
-      <div class="header-menu__burger">
+      <div class="header-menu__icon">
         {{>components/mobile-menu}}
       </div>
     </div>

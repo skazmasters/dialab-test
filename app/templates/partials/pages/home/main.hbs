@@ -58,7 +58,7 @@
             required=1
           }}
           <!---->
-          <div>
+          <div class="nowrap fill">
             <input id="c2" type="checkbox" checked>
             <label for="c2">SMS-сообщение о готовности</label>
           </div>
@@ -108,7 +108,50 @@
       {{/global/form-section}}
 
       {{#>global/form-section title="Услуги квитанции"}}
-        ...
+        <div class="text-uppercase color-secondary">
+          <p>Услуги: <span>0</span>, комплексы <span>0</span></p>
+        </div>
+
+        <div class="static">
+          <div class="static-table">
+            <table>
+              <thead>
+              <tr>
+                <td>Код</td>
+                <td>Наименование</td>
+                <td>Количество</td>
+                <td>Тип цены</td>
+                <td>Валюта</td>
+                <td>Цена</td>
+                <td>Сумма +/-</td>
+                <td>Скидка / Надбавка</td>
+                <td>К оплате</td>
+                <td>Срок выполнения, дн</td>
+                <td>Удалить</td>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>234</td>
+                <td>Наименование тестовое</td>
+                <td>2</td>
+                <td>Тип цены</td>
+                <td>Доллары</td>
+                <td>1000</td>
+                <td>1100</td>
+                <td>10</td>
+                <td>1000</td>
+                <td>12</td>
+                <td>
+                  <button class="btn-inline color-danger">
+                    <span class="material-icons">clear</span>
+                  </button>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       {{/global/form-section}}
 
     {{/global/section}}

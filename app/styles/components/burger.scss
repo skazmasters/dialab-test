@@ -9,7 +9,7 @@
   user-select: none;
 }
 
-.hamRotate.active {
+.menu-opened .hamRotate {
   transform: rotate(45deg);
 }
 
@@ -29,10 +29,10 @@
   stroke-dasharray: 40 121;
 }
 
-.ham4.active .top {
+.menu-opened .top {
   stroke-dashoffset: -68px;
 }
 
-.ham4.active .bottom {
+.menu-opened .bottom {
   stroke-dashoffset: -68px;
 }
