@@ -12,399 +12,673 @@
             const vueOrderDetailsForm = new Vue({
               el: '#orderForm',
               template: `
-              <v-app>
-                <v-card flat outlined>
-                  <v-row>
-                    <v-col cols="12">
-                      <v-card-text class="pa-0">
-                        <v-form ref="form">
-                          <v-row no-gutters>
-                            <v-col cols="2">
-                              <v-subheader class="pt-2">
-                                № квитанции
-                              </v-subheader>
-                            </v-col>
-                            <v-col cols="5">
-                              <v-text-field
-                                v-model="OrderForm.num"
-                                label=" № квитанции"
-                                class="pr-12"
-                              />
-                            </v-col>
-                            <v-col cols="5">
-                              <v-menu
-                                ref="menu"
-                                v-model="menu"
-                                :close-on-content-click="false"
-                                :return-value.sync="OrderForm.kvit_date"
-                                transition="scale-transition"
-                                offset-y
-                                min-width="auto"
+                <v-app>
+                  <v-card flat outlined max-width="1400px">
+                    <v-row>
+                      <v-col cols="12">
+                        <v-card-text class="pa-0">
+                          <v-form ref="form">
+                            <v-row no-gutters>
+                              <v-col
+                                cols="12"
+                                sm="12"
+                                md="6"
+                                lg="6"
                               >
-                                <template v-slot:activator="{ on, attrs }">
-                                  <v-text-field
-                                    v-model="OrderForm.kvit_date"
-                                    label="Выбрать дату"
-                                    prepend-icon="mdi-calendar"
-                                    readonly
-                                    v-bind="attrs"
-                                    v-on="on"
-                                  />
-                                </template>
-                                <v-date-picker
-                                  v-model="OrderForm.kvit_date"
-                                  no-title
-                                  scrollable>
-                                  <v-spacer></v-spacer>
-                                  <v-btn
-                                    text
-                                    color="primary"
-                                    @click="menu = false"
+                                <v-row>
+                                  <v-col
+                                    cols="4"
+                                    sm="3"
+                                    md="4"
+                                    lg="4"
                                   >
-                                    Cancel
-                                  </v-btn>
-                                  <v-btn
-                                    text
-                                    color="primary"
-                                    @click="$refs.menu.save(OrderForm.kvit_date)"
+                                    <v-card-text>
+                                      № квитанции
+                                    </v-card-text>
+                                  </v-col>
+                                  <v-col
+                                    cols="7"
+                                    sm="7"
+                                    md="8"
+                                    lg="8"
                                   >
-                                    OK
-                                  </v-btn>
-                                </v-date-picker>
-                              </v-menu>
-                            </v-col>
-                          </v-row>
-                          <v-row no-gutters>
-
-                          </v-row>
-                          <v-row no-gutters>
-                            <v-col cols="2">
-                              <v-subheader>
-                                Направивший врач
-                              </v-subheader>
-                            </v-col>
-                            <v-col cols="7">
-                              <v-text-field
-                                v-model="OrderForm.dir_dr"
-                                label="Направивший врач"
-                              />
-                            </v-col>
-                          </v-row>
-
-                          <v-row no-gutters>
-                            <v-col cols="2">
-                              <v-subheader>
-                                Пациент ФИО
-                              </v-subheader>
-                            </v-col>
-                            <v-col cols="7">
-                              <v-autocomplete
-                                v-model="OrderForm.fio"
-                                label="Пациент ФИО"
-                                :items="people"
-                              />
-                            </v-col>
-                          </v-row>
-
-                          <v-row no-gutters>
-                            <v-col cols="2">
-                              <v-subheader>
-                                Пол
-                              </v-subheader>
-                            </v-col>
-                            <v-col cols="7">
-                              <v-select
-                                v-model="OrderForm.gender"
-                                label="Пол"
-                                :items="gender"
-                              />
-                            </v-col>
-                          </v-row>
-
-                          <v-row no-gutters>
-                            <v-col cols="2">
-                              <v-subheader>
-                                Дата рождения
-                              </v-subheader>
-                            </v-col>
-                            <v-col cols="4">
-                              <v-menu
-                                ref="menu2"
-                                v-model="menu2"
-                                :close-on-content-click="false"
-                                :return-value.sync="OrderForm.birthdate"
-                                transition="scale-transition"
-                                offset-y
-                                min-width="auto"
+                                    <v-text-field
+                                      v-model="OrderForm.num"
+                                      class="pr-12 pr-sm-8"
+                                    />
+                                  </v-col>
+                                </v-row>
+                              </v-col>
+                              <v-col
+                                cols="12"
+                                sm="12"
+                                md="6"
+                                lg="6"
                               >
-                                <template v-slot:activator="{ on, attrs }">
-                                  <v-text-field
-                                    v-model="OrderForm.birthdate"
-                                    label="Выбрать дату"
-                                    prepend-icon="mdi-calendar"
-                                    readonly
-                                    v-bind="attrs"
-                                    v-on="on"
-                                  />
-                                </template>
-                                <v-date-picker
-                                  v-model="OrderForm.birthdate"
-                                  no-title
-                                  scrollable
-                                >
-                                  <v-spacer></v-spacer>
-                                  <v-btn
-                                    text
-                                    color="primary"
-                                    @click="menu2 = false"
+                                <v-row>
+                                  <v-col
+                                    cols="4"
+                                    sm="3"
+                                    md="4"
+                                    lg="3"
                                   >
-                                    Cancel
-                                  </v-btn>
-                                  <v-btn
-                                    text
-                                    color="primary"
-                                    @click="$refs.menu2.save(OrderForm.birthdate)"
+                                    <v-card-text>
+                                      Дата
+                                    </v-card-text>
+                                  </v-col>
+                                  <v-col
+                                    cols="7"
+                                    sm="7"
+                                    md="8"
+                                    lg="8"
                                   >
-                                    OK
-                                  </v-btn>
-                                </v-date-picker>
-                              </v-menu>
-                            </v-col>
-                            <v-col cols="1">
-                              <v-subheader class="pl-2">
-                                Возраст
-                              </v-subheader>
-                            </v-col>
-                            <v-col cols="2">
-                              <v-text-field
-                                v-model="OrderForm.age"
-                                label="Возраст"
-                              />
-                            </v-col>
-                          </v-row>
+                                    <v-menu
+                                      ref="CalendarDate"
+                                      v-model="CalendarDate"
+                                      :close-on-content-click="false"
+                                      :return-value.sync="OrderForm.kvit_date"
+                                      transition="scale-transition"
+                                      offset-y
+                                      min-width="auto"
+                                    >
+                                      <template v-slot:activator="{ on, attrs }">
+                                        <v-text-field
+                                          v-model="OrderForm.kvit_date"
+                                          label="Выбрать дату"
+                                          append-icon="mdi-calendar"
+                                          readonly
+                                          v-bind="attrs"
+                                          v-on="on"
+                                          class="pr-12 pr-sm-8"
+                                        />
+                                      </template>
+                                      <v-date-picker
+                                        v-model="OrderForm.kvit_date"
+                                        no-title
+                                        scrollable
+                                      >
+                                        <v-spacer></v-spacer>
+                                        <v-btn
+                                          text color="primary"
+                                          @click="CalendarDate = false"
+                                        >
+                                          Отмена
+                                        </v-btn>
+                                        <v-btn
+                                          text color="primary"
+                                          @click="$refs.CalendarDate.save(OrderForm.kvit_date)"
+                                        >
+                                          Ок
+                                        </v-btn>
+                                      </v-date-picker>
+                                    </v-menu>
+                                  </v-col>
+                                </v-row>
+                              </v-col>
+                            </v-row>
 
-                          <v-row>
-                            <v-col cols="2">
-                              <v-subheader>
-                                Адрес
-                              </v-subheader>
-                            </v-col>
-                            <v-col cols="9">
-                              <v-text-field
-                                v-model="OrderForm.address"
-                                label="Адрес"
-                              />
-                            </v-col>
-                          </v-row>
-
-                          <v-row>
-                            <v-col cols="2">
-                              <v-subheader>
-                                Телефон
-                              </v-subheader>
-                            </v-col>
-                            <v-col cols="5">
-                              <v-text-field
-                                v-model="OrderForm.phone"
-                                label="Телефон"
-                              />
-                            </v-col>
-                          </v-row>
-
-                          <v-row>
-                            <v-col cols="2">
-                              <v-subheader>
-                                Моб.телефон
-                              </v-subheader>
-                            </v-col>
-                            <v-col cols="5">
-                              <v-text-field
-                                v-model="OrderForm.cellphone"
-                                label="Моб.телефон"
-                              />
-                            </v-col>
-                          </v-row>
-
-                          <v-row>
-                            <v-col cols="2">
-                              <v-subheader>
-                                Email
-                              </v-subheader>
-                            </v-col>
-                            <v-col cols="5">
-                              <v-text-field
-                                v-model="OrderForm.email"
-                                label="Email"
-                              />
-                            </v-col>
-                          </v-row>
-
-                          <v-row>
-                            <v-col cols="2">
-                              <v-subheader>
-                                Смс о готовности
-                              </v-subheader>
-                            </v-col>
-                            <v-col cols="5">
-                              <v-checkbox
-                                v-model="OrderForm.is_sms"
-
-                              />
-                            </v-col>
-                          </v-row>
-
-                          <v-row no-gutters>
-                            <v-col cols="2">
-                              <v-subheader>
-                                Документ, удостоверяюший личность
-                              </v-subheader>
-                            </v-col>
-                            <v-col cols="7">
-                              <v-select
-                                v-model="OrderForm.credential"
-                                label="Документ, удостоверяюший личность"
-                                :items="document"
-                              />
-                            </v-col>
-                          </v-row>
-
-                          <v-row>
-                            <v-col cols="2">
-                              <v-subheader>
-                                Серия
-                              </v-subheader>
-                            </v-col>
-                            <v-col cols="4">
-                              <v-text-field
-                                v-model="OrderForm.cred_serie"
-                                label="Серия"
-                              />
-                            </v-col>
-                            <v-col cols="2">
-                              <v-subheader>
-                                Номер
-                              </v-subheader>
-                            </v-col>
-                            <v-col cols="4">
-                              <v-text-field
-                                v-model="OrderForm.cred_number"
-                                label="Серия"
-                              />
-                            </v-col>
-                          </v-row>
-
-                          <v-row>
-                            <v-col cols="2">
-                              <v-subheader>
-                                Когда выдан
-                              </v-subheader>
-                            </v-col>
-                            <v-col cols="4">
-                              <v-menu
-                                ref="menu4"
-                                v-model="menu4"
-                                :close-on-content-click="false"
-                                :return-value.sync="OrderForm.kvit_date"
-                                transition="scale-transition"
-                                offset-y
-                                min-width="auto"
+                            <v-row no-gutters>
+                              <v-col
+                                cols="4"
+                                sm="3"
+                                md="4"
+                                lg="3"
                               >
-                                <template v-slot:activator="{ on, attrs }">
-                                  <v-text-field
-                                    v-model="OrderForm.cred_when"
-                                    label="Выбрать дату"
-                                    prepend-icon="mdi-calendar"
-                                    readonly
-                                    v-bind="attrs"
-                                    v-on="on"
-                                  />
-                                </template>
-                                <v-date-picker
-                                  v-model="OrderForm.cred_when"
-                                  no-title
-                                  scrollable
-                                >
-                                  <v-spacer></v-spacer>
-                                  <v-btn
-                                    text
-                                    color="primary"
-                                    @click="menu4 = false"
+                                <v-card-text>
+                                  Направивший врач
+                                </v-card-text>
+                              </v-col>
+                              <v-col
+                                cols="7"
+                                sm="7"
+                                md="8"
+                                lg="8"
+                              >
+                                <v-text-field
+                                  v-model="OrderForm.dir_dr"
+                                  class="pr-12 pr-sm-8"
+                                />
+                              </v-col>
+                            </v-row>
+
+                            <v-row no-gutters>
+                              <v-col
+                                cols="4"
+                                sm="3"
+                                md="4"
+                                lg="3"
+                              >
+                                <v-card-text>
+                                  Пациент ФИО
+                                </v-card-text>
+                              </v-col>
+                              <v-col
+                                cols="7"
+                                sm="7"
+                                md="8"
+                                lg="8"
+                              >
+                                <v-autocomplete
+                                  v-model="OrderForm.fio"
+                                  class="pr-12 pr-sm-8"
+                                  :items="people"
+                                  append-icon="mdi-magnify"
+                                />
+                              </v-col>
+                            </v-row>
+
+                            <v-row no-gutters>
+                              <v-col
+                                cols="4"
+                                sm="3"
+                                md="4"
+                                lg="3"
+                              >
+                                <v-card-text>
+                                  Пол
+                                </v-card-text>
+                              </v-col>
+                              <v-col
+                                cols="7"
+                                sm="7"
+                                md="8"
+                                lg="8"
+                              >
+                                <v-select
+                                  v-model="OrderForm.gender"
+                                  class="pr-12 pr-sm-8"
+                                  :items="gender"
+                                />
+                              </v-col>
+                            </v-row>
+
+                            <v-row no-gutters>
+                              <v-col
+                                cols="12"
+                                sm="12"
+                                md="6"
+                                lg="6"
+                              >
+                                <v-row no-gutters>
+                                  <v-col
+                                    cols="4"
+                                    sm="3"
+                                    md="4"
+                                    lg="4"
                                   >
-                                    Cancel
-                                  </v-btn>
-                                  <v-btn
-                                    text
-                                    color="primary"
-                                    @click="$refs.menu4.save(OrderForm.cred_when)"
+                                    <v-card-text>
+                                      Дата рождения
+                                    </v-card-text>
+                                  </v-col>
+                                  <v-col
+                                    cols="7"
+                                    sm="7"
+                                    md="8"
+                                    lg="8"
                                   >
-                                    OK
-                                  </v-btn>
-                                </v-date-picker>
-                              </v-menu>
-                            </v-col>
-                            <v-col cols="2">
-                              <v-subheader>
-                                Кем выдан
-                              </v-subheader>
-                            </v-col>
-                            <v-col cols="4">
-                              <v-text-field
-                                v-model="OrderForm.cred_whom"
-                                label="Кем выдан"
-                              />
-                            </v-col>
-                          </v-row>
+                                    <v-menu
+                                      ref="CalendarDateBirthday"
+                                      v-model="CalendarDateBirthday"
+                                      :close-on-content-click="false"
+                                      :return-value.sync="OrderForm.birthdate"
+                                      transition="scale-transition"
+                                      offset-y
+                                      min-width="auto"
+                                    >
+                                      <template v-slot:activator="{ on, attrs }">
+                                        <v-text-field
+                                          v-model="OrderForm.birthdate"
+                                          class="pr-12 pr-sm-8"
+                                          label="Выбрать дату"
+                                          append-icon="mdi-calendar"
+                                          readonly
+                                          v-bind="attrs"
+                                          v-on="on"
+                                        />
+                                      </template>
+                                      <v-date-picker v-model="OrderForm.birthdate" no-title scrollable>
+                                        <v-spacer></v-spacer>
+                                        <v-btn text color="primary" @click="CalendarDateBirthday = false">
+                                          Cancel
+                                        </v-btn>
+                                        <v-btn text color="primary" @click="$refs.CalendarDateBirthday.save(OrderForm.birthdate)">
+                                          OK
+                                        </v-btn>
+                                      </v-date-picker>
+                                    </v-menu>
+                                  </v-col>
+                                </v-row>
+                              </v-col>
 
-                          <v-row>
-                            <v-col cols="2">
-                              <v-subheader>
-                                Код подразделения
-                              </v-subheader>
-                            </v-col>
-                            <v-col cols="4">
-                              <v-text-field
-                                v-model="OrderForm.facil_code"
-                                label="Код подразделения"
-                              />
-                            </v-col>
-                          </v-row>
+                              <v-col
+                                cols="12"
+                                sm="12"
+                                md="6"
+                                lg="6"
+                              >
+                                <v-row no-gutters>
+                                  <v-col
+                                    cols="4"
+                                    sm="3"
+                                    md="4"
+                                    lg="3"
+                                  >
+                                    <v-card-text>
+                                      Возраст
+                                    </v-card-text>
+                                  </v-col>
+                                  <v-col
+                                    cols="7"
+                                    sm="7"
+                                    md="8"
+                                    lg="8"
+                                  >
+                                    <v-text-field
+                                      v-model="OrderForm.age"
+                                      class="pr-12 pr-sm-8"
+                                      label="Возраст"
+                                    />
+                                  </v-col>
+                                </v-row>
+                              </v-col>
+                            </v-row>
 
-                        </v-form>
-                      </v-card-text>
-                    </v-col>
-                  </v-row>
+                            <v-row no-gutters>
+                              <v-col
+                                cols="4"
+                                sm="3"
+                                md="4"
+                                lg="3"
+                              >
+                                <v-card-text>
+                                  Адрес
+                                </v-card-text>
+                              </v-col>
+                              <v-col
+                                cols="7"
+                                sm="7"
+                                md="8"
+                                lg="8"
+                              >
+                                <v-text-field
+                                  v-model="OrderForm.address"
+                                  class="pr-12 pr-sm-8"
+                                />
+                              </v-col>
+                            </v-row>
 
-                  <v-card-actions class="justify-center">
-                    <v-btn depressed color="primary" @click="sendOrderForm">
-                      Отправить
-                    </v-btn>
-                  </v-card-actions>
-                </v-card>
-              </v-app>
+                            <v-row no-gutters>
+                              <v-col
+                                cols="4"
+                                sm="3"
+                                md="4"
+                                lg="3"
+                              >
+                                <v-card-text>
+                                  Телефон
+                                </v-card-text>
+                              </v-col>
+                              <v-col
+                                cols="7"
+                                sm="7"
+                                md="8"
+                                lg="8"
+                              >
+                                <v-text-field
+                                  v-model="OrderForm.phone"
+                                  class="pr-12 pr-sm-8"
+                                />
+                              </v-col>
+                            </v-row>
+
+                            <v-row no-gutters>
+                              <v-col
+                                cols="4"
+                                sm="3"
+                                md="4"
+                                lg="3"
+                              >
+                                <v-card-text>
+                                  Моб.телефон
+                                </v-card-text>
+                              </v-col>
+                              <v-col
+                                cols="7"
+                                sm="7"
+                                md="8"
+                                lg="8"
+                              >
+                                <v-text-field
+                                  v-model="OrderForm.cellphone"
+                                  class="pr-12 pr-sm-8"
+                                />
+                              </v-col>
+                            </v-row>
+
+                            <v-row no-gutters>
+                              <v-col
+                                cols="4"
+                                sm="3"
+                                md="4"
+                                lg="3"
+                              >
+                                <v-card-text>
+                                  Email
+                                </v-card-text>
+                              </v-col>
+                              <v-col
+                                cols="7"
+                                sm="7"
+                                md="8"
+                                lg="8"
+                              >
+                                <v-text-field
+                                  v-model="OrderForm.email"
+                                  class="pr-12 pr-sm-8"
+                                />
+                              </v-col>
+                            </v-row>
+
+                            <v-row no-gutters>
+                              <v-col
+                                cols="4"
+                                sm="3"
+                                md="4"
+                                lg="3"
+                              >
+                                <v-card-text>
+                                  Смс о готовности
+                                </v-card-text>
+                              </v-col>
+                              <v-col
+                                cols="7"
+                                sm="7"
+                                md="8"
+                                lg="8"
+                              >
+                                <v-checkbox
+                                  v-model="OrderForm.is_sms"
+                                  color="#64219e"
+                                />
+                              </v-col>
+                            </v-row>
+
+                            <v-row no-gutters>
+                              <v-col
+                                cols="4"
+                                sm="3"
+                                md="4"
+                                lg="3"
+                              >
+                                <v-card-text>
+                                  Документ, удостоверяюший личность
+                                </v-card-text>
+                              </v-col>
+                              <v-col
+                                cols="7"
+                                sm="7"
+                                md="8"
+                                lg="8"
+                              >
+                                <v-select
+                                  v-model="OrderForm.credential"
+                                  :items="document"
+                                  class="pr-12 pr-sm-8"
+                                />
+                              </v-col>
+                            </v-row>
+
+                            <v-row no-gutters>
+                              <v-col
+                                cols="12"
+                                sm="12"
+                                md="6"
+                                lg="6"
+                              >
+                                <v-row>
+                                  <v-col
+                                    cols="4"
+                                    sm="3"
+                                    md="4"
+                                    lg="4"
+                                  >
+                                    <v-card-text>
+                                      Серия
+                                    </v-card-text>
+                                  </v-col>
+                                  <v-col
+                                    cols="7"
+                                    sm="7"
+                                    md="8"
+                                    lg="8"
+                                  >
+                                    <v-text-field
+                                      v-model="OrderForm.cred_serie"
+                                      class="pr-12 pr-sm-8"
+                                    />
+                                  </v-col>
+                                </v-row>
+                              </v-col>
+
+                              <v-col
+                                cols="12"
+                                sm="12"
+                                md="6"
+                                lg="6"
+                              >
+                                <v-row no-gutters>
+                                  <v-col
+                                    cols="4"
+                                    sm="3"
+                                    md="4"
+                                    lg="4"
+                                  >
+                                    <v-card-text>
+                                      Номер
+                                    </v-card-text>
+                                  </v-col>
+                                  <v-col
+                                    cols="7"
+                                    sm="7"
+                                    md="8"
+                                    lg="8"
+                                  >
+                                    <v-text-field
+                                      v-model="OrderForm.cred_number"
+                                      class="pr-12 pr-sm-8"
+                                      label="Серия"
+                                    />
+                                  </v-col>
+                                </v-row>
+                              </v-col>
+                            </v-row>
+
+                            <v-row no-gutters>
+                              <v-col
+                                cols="12"
+                                sm="12"
+                                md="6"
+                                lg="6"
+                              >
+                                <v-row no-gutters>
+                                  <v-col
+                                    cols="4"
+                                    sm="3"
+                                    md="4"
+                                    lg="4"
+                                  >
+                                    <v-card-text>
+                                      Когда выдан
+                                    </v-card-text>
+                                  </v-col>
+                                  <v-col
+                                    cols="7"
+                                    sm="7"
+                                    md="8"
+                                    lg="8"
+                                  >
+                                    <v-menu
+                                      ref="CalendarDateRegistrationPassport"
+                                      v-model="CalendarDateRegistrationPassport"
+                                      :close-on-content-click="false"
+                                      :return-value.sync="OrderForm.kvit_date"
+                                      transition="scale-transition"
+                                      offset-y
+                                      min-width="auto"
+                                    >
+                                      <template v-slot:activator="{ on, attrs }">
+                                        <v-text-field
+                                          v-model="OrderForm.cred_when"
+                                          label="Выбрать дату"
+                                          append-icon="mdi-calendar"
+                                          readonly
+                                          v-bind="attrs"
+                                          v-on="on"
+                                          class="pr-12 pr-sm-8"
+                                        />
+                                      </template>
+                                      <v-date-picker v-model="OrderForm.cred_when" no-title scrollable>
+                                        <v-spacer></v-spacer>
+                                        <v-btn text color="primary" @click="CalendarDateRegistrationPassport = false">
+                                          Cancel
+                                        </v-btn>
+                                        <v-btn text color="primary"
+                                               @click="$refs.CalendarDateRegistrationPassport.save(OrderForm.cred_when)">
+                                          OK
+                                        </v-btn>
+                                      </v-date-picker>
+                                    </v-menu>
+                                  </v-col>
+                                </v-row>
+                              </v-col>
+
+                              <v-col
+                                cols="12"
+                                sm="12"
+                                md="6"
+                                lg="6"
+                              >
+                                <v-row no-gutters>
+                                  <v-col
+                                    cols="4"
+                                    sm="3"
+                                    md="4"
+                                    lg="4"
+                                  >
+                                    <v-card-text>
+                                      Кем выдан
+                                    </v-card-text>
+                                  </v-col>
+                                  <v-col
+                                    cols="7"
+                                    sm="7"
+                                    md="8"
+                                    lg="8"
+                                  >
+                                    <v-text-field
+                                      v-model="OrderForm.cred_whom"
+                                      label="Кем выдан"
+                                      class="pr-12 pr-sm-8"
+                                    />
+                                  </v-col>
+                                </v-row>
+                              </v-col>
+                            </v-row>
+
+
+                            <v-row no-gutters>
+                              <v-col
+                                cols="4"
+                                sm="3"
+                                md="4"
+                                lg="3"
+                              >
+                                <v-card-text>
+                                  Код подразделения
+                                </v-card-text>
+                              </v-col>
+                              <v-col
+                                cols="7"
+                                sm="7"
+                                md="8"
+                                lg="8"
+                              >
+                                <v-text-field
+                                  v-model="OrderForm.facil_code"
+                                  label="Код подразделения"
+                                  class="pr-12 pr-sm-8"
+                                />
+                              </v-col>
+                            </v-row>
+                          </v-form>
+                        </v-card-text>
+                      </v-col>
+                    </v-row>
+
+                    <v-card-actions class="justify-start">
+                      <v-row>
+                        <v-col
+                          cols="12"
+                          sm="12"
+                          md="3"
+                          lg="3"
+                        >
+                          <v-btn depressed color="primary" @click="sendOrderForm">
+                            Печать договора
+                          </v-btn>
+                        </v-col>
+                        <v-col
+                          cols="12"
+                          sm="12"
+                          md="3"
+                          lg="3"
+                        >
+                          <v-btn depressed color="primary" @click="sendOrderForm">
+                            Согласие на ВИЧ
+                          </v-btn>
+                        </v-col>
+                        <v-col
+                          cols="12"
+                          sm="12"
+                          md="3"
+                          lg="3"
+                        >
+                          <v-btn depressed color="primary" @click="sendOrderForm">
+                            Разрешение на e-mail
+                          </v-btn>
+                        </v-col>
+                      </v-row>
+                    </v-card-actions>
+                  </v-card>
+                </v-app>
               `,
-              vuetify: new Vuetify(),
+              vuetify: new Vuetify({
+                theme: {
+                  options: {
+                    customProperties: true,
+                  },
+
+                  themes: {
+                    light: {
+                      primary: '#64219e', // #003bf5
+                      // secondary: colors.red.lighten4, // #FFCDD2
+                      // accent: colors.indigo.base, // #3F51B5
+                    },
+                  }
+                },
+
+                icons: {
+                  iconfont: 'mdi', // default - only for display purposes
+                },
+              }),
               data: () => ({
                 date: new Date().toISOString().substr(0, 10),
-                people: [
-                  'Sandra Adams',
-                  'Sandra Adams2',
-                  'AMAD DAKDKAD',
-                  'какой-то челик',
-                ],
-                document: [
-                  'Паспорт',
-                  'Водительское',
-                  'Завещание',
-                  'Steam аккаунт',
-                ],
-                gender: [
-                  'Мужской',
-                  'Женский',
-                  'Феминистка',
-                ],
-                menu: false,
-                menu2: false,
-                menu4: false,
+                people: ['Sandra Adams', 'Sandra Adams2', 'AMAD DAKDKAD', 'какой-то челик'],
+                document: ['Паспорт', 'Водительское', 'Завещание', 'Steam аккаунт'],
+                gender: ['Мужской', 'Женский', 'Феминистка'],
+                CalendarDate: false,
+                CalendarDateBirthday: false,
+                CalendarDateRegistrationPassport: false,
                 OrderForm: {
                   num: '',
                   kvit_date: '',
@@ -443,6 +717,66 @@
             });
           });
         </script>
+      {{/global/form-section}}
+      {{#>global/form-section title="Данные пациента"}}
+        <div class="grid-columns">
+          <!--№ Квитанции-->
+          {{>ui/form-field
+            id="ticketNumber"
+            label="№ Квитанции"
+            required=1
+          }}
+          <!--Дата-->
+          {{>ui/form-field id="ticketNumber2" type="date" label="Дата приема"}}
+          <!--Направивший врач-->
+          {{#>ui/form-field field-class="fill" id="ticketNumber3" label="Направивший врач" actions=1 required=1}}
+            <button type="button">
+              <span class="material-icons">search</span>
+            </button>
+            <button type="button">
+              <span class="material-icons">edit</span>
+            </button>
+          {{/ui/form-field}}
+          <!--ФИО Пациента-->
+          {{#>ui/form-field field-class="fill" id="ticketNumber4" label="ФИО Пациента" actions=1 required=1}}
+            <button type="button">
+              <span class="material-icons">search</span>
+            </button>
+          {{/ui/form-field}}
+          <!--ФИО Пациента-->
+          <div class="form-field">
+            <div class="form-field__container">
+              <select class="form-field__input" name="select_01" id="select_01">
+                <option value="0">Не выбран</option>
+                <option value="1">Мужской</option>
+                <option value="2">Женский</option>
+              </select>
+              <label class="form-field__label" for="select_01">Пол</label>
+            </div>
+          </div>
+          <!---->
+          {{>ui/form-field id="ticketNumber2" type="date" label="Дата рождения"}}
+          <!---->
+          {{>ui/form-field
+            id="ticketPhone"
+            label="Номер телефона"
+            type="tel:+11111111111"
+            required=1
+          }}
+          <!---->
+          {{>ui/form-field
+            id="ticketMail"
+            label="Email"
+            type="mailto: example@exe.com"
+            required=1
+          }}
+          <!---->
+          <div class="nowrap fill">
+            <input id="c2" type="checkbox" checked>
+            <label for="c2">SMS-сообщение о готовности</label>
+          </div>
+          <!---->
+        </div>
       {{/global/form-section}}
 
       {{#>global/form-section title=0}}
