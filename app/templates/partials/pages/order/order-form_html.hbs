@@ -1,0 +1,60 @@
+{{#>global/form-section title="Данные пациента"}}
+  <div class="grid-columns">
+    <!--№ Квитанции-->
+    {{>ui/form-field
+      id="ticketNumber"
+      label="№ Квитанции"
+      required=1
+    }}
+    <!--Дата-->
+    {{>ui/form-field id="ticketNumber2" type="date" label="Дата приема"}}
+    <!--Направивший врач-->
+    {{#>ui/form-field field-class="fill" id="ticketNumber3" label="Направивший врач" actions=1 required=1}}
+      <button type="button">
+        <span class="material-icons">search</span>
+      </button>
+      <button type="button">
+        <span class="material-icons">edit</span>
+      </button>
+    {{/ui/form-field}}
+    <!--ФИО Пациента-->
+    {{#>ui/form-field field-class="fill" id="ticketNumber4" label="ФИО Пациента" actions=1 required=1}}
+      <button type="button">
+        <span class="material-icons">search</span>
+      </button>
+    {{/ui/form-field}}
+    <!--ФИО Пациента-->
+    <div class="form-field">
+      <div class="form-field__container">
+        <select class="form-field__input" name="select_01" id="select_01">
+          <option value="0">Не выбран</option>
+          <option value="1">Мужской</option>
+          <option value="2">Женский</option>
+        </select>
+        <label class="form-field__label" for="select_01">Пол</label>
+      </div>
+    </div>
+    <!---->
+    {{>ui/form-field id="ticketNumber2" type="date" label="Дата рождения"}}
+    <!---->
+    {{>ui/form-field
+      id="ticketPhone"
+      label="Номер телефона"
+      type="tel:+11111111111"
+      required=1
+    }}
+    <!---->
+    {{>ui/form-field
+      id="ticketMail"
+      label="Email"
+      type="mailto: example@exe.com"
+      required=1
+    }}
+    <!---->
+    <div class="nowrap fill">
+      <input id="c2" type="checkbox" checked>
+      <label for="c2">SMS-сообщение о готовности</label>
+    </div>
+    <!---->
+  </div>
+{{/global/form-section}}

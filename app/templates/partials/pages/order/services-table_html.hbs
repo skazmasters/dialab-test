@@ -1,0 +1,81 @@
+{{#>global/form-section title=0}}
+  <div class="buttons-inline">
+    <button class="btn btn--small" type="button">Оплатить</button>
+    <button class="btn btn--small" type="button">Сохранить и закрыть</button>
+    <button class="btn btn--small" type="button">Отмена</button>
+  </div>
+
+  <div class="grid-columns">
+    <!--№ Квитанции-->
+    {{>ui/form-field
+      id="ticketNumber"
+      label="№ Квитанции"
+      required=1
+    }}
+    <!--Дата-->
+    {{>ui/form-field id="ticketNumber2" type="date" label="Дата приема"}}
+    <!--Направивший врач-->
+    {{#>ui/form-field field-class="fill" id="ticketNumber3" label="Направивший врач" actions=1 required=1}}
+      <button type="button">
+        <span class="material-icons">search</span>
+      </button>
+      <button type="button">
+        <span class="material-icons">edit</span>
+      </button>
+    {{/ui/form-field}}
+    <!--ФИО Пациента-->
+    {{#>ui/form-field field-class="fill" id="ticketNumber4" label="ФИО Пациента" actions=1 required=1}}
+      <button type="button">
+        <span class="material-icons">search</span>
+      </button>
+    {{/ui/form-field}}
+    <!---->
+  </div>
+{{/global/form-section}}
+
+{{#>global/form-section title="Услуги квитанции"}}
+  <div class="text-uppercase color-secondary">
+    <p>Услуги: <span>0</span>, комплексы <span>0</span></p>
+  </div>
+
+  <div class="static">
+    <div class="static-table">
+      <table>
+        <thead>
+        <tr>
+          <td>Код</td>
+          <td>Наименование</td>
+          <td>Количество</td>
+          <td>Тип цены</td>
+          <td>Валюта</td>
+          <td>Цена</td>
+          <td>Сумма +/-</td>
+          <td>Скидка / Надбавка</td>
+          <td>К оплате</td>
+          <td>Срок выполнения, дн</td>
+          <td>Удалить</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>234</td>
+          <td>Наименование тестовое</td>
+          <td>2</td>
+          <td>Тип цены</td>
+          <td>Доллары</td>
+          <td>1000</td>
+          <td>1100</td>
+          <td>10</td>
+          <td>1000</td>
+          <td>12</td>
+          <td>
+            <button class="btn-inline color-danger">
+              <span class="material-icons">clear</span>
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+{{/global/form-section}}

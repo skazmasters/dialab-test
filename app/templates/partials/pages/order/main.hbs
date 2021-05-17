@@ -1,0 +1,13 @@
+<div class="layout-main">
+  <div class="container gap-t-30">
+    <p class="text-sm text-right">
+      <a class="link-primary" href="#">Помощь</a>
+    </p>
+
+    {{#>global/section title="Создание заказа"}}
+      {{> pages/order/order-form_vue }}
+
+      {{> pages/order/services-table_vue }}
+    {{/global/section}}
+  </div>
+</div>

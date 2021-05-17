@@ -1,0 +1,301 @@
+{{#>global/form-section title="Данные пациента"}}
+  <div id="orderForm"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const vueOrderDetailsForm = new Vue({
+        el: '#orderForm',
+        template: `
+          <v-app>
+            <v-form ref="form">
+              <v-container class="px-0">
+                <v-row>
+                  <v-col cols="6">
+                    <v-text-field
+                        v-model="OrderForm.num"
+                        label="№ квитанции"
+                        hide-details="auto"
+                    />
+                  </v-col>
+                  <v-col cols="6">
+                    <v-menu
+                        ref="CalendarDate"
+                        v-model="CalendarDate"
+                        :close-on-content-click="false"
+                        :return-value.sync="OrderForm.kvit_date"
+                        transition="scale-transition"
+                        offset-y
+                        min-width="auto"
+                    >
+                      <template v-slot:activator="{ on, attrs }">
+                        <v-text-field
+                            v-model="OrderForm.kvit_date"
+                            label="Выбрать дату"
+                            append-icon="mdi-calendar"
+                            readonly
+                            v-bind="attrs"
+                            v-on="on"
+                            hide-details="auto"
+                        />
+                      </template>
+                      <v-date-picker v-model="OrderForm.kvit_date" no-title scrollable>
+                        <v-spacer></v-spacer>
+                        <v-btn text color="primary" @click="CalendarDate = false">
+                          Отмена
+                        </v-btn>
+                        <v-btn text color="primary" @click="$refs.CalendarDate.save(OrderForm.kvit_date)">
+                          Ок
+                        </v-btn>
+                      </v-date-picker>
+                    </v-menu>
+                  </v-col>
+                  <v-col cols="12">
+                    <v-text-field
+                        v-model="OrderForm.dir_dr"
+                        label="Направивший врач"
+                        hide-details="auto"
+                    />
+                  </v-col>
+                  <v-col cols="12">
+                    <v-autocomplete
+                        v-model="OrderForm.fio"
+                        label="Пациент ФИО"
+                        :items="people"
+                        append-icon="mdi-magnify"
+                        hide-details="auto"
+                    />
+                  </v-col>
+                  <v-col cols="12">
+                    <v-select
+                        v-model="OrderForm.gender"
+                        label="Пол"
+                        :items="gender"
+                        hide-details="auto"
+                    />
+                  </v-col>
+                  <v-col cols="6">
+                    <v-menu
+                        ref="CalendarDateBirthday"
+                        v-model="CalendarDateBirthday"
+                        :close-on-content-click="false"
+                        :return-value.sync="OrderForm.birthdate"
+                        transition="scale-transition"
+                        offset-y
+                        min-width="auto"
+                    >
+                      <template v-slot:activator="{ on, attrs }">
+                        <v-text-field
+                            v-model="OrderForm.birthdate"
+                            label="Дата рождения: выбрать дату"
+                            append-icon="mdi-calendar"
+                            readonly
+                            v-bind="attrs"
+                            v-on="on"
+                            hide-details="auto"
+                        />
+                      </template>
+                      <v-date-picker v-model="OrderForm.birthdate" no-title scrollable>
+                        <v-spacer></v-spacer>
+                        <v-btn text color="primary" @click="CalendarDateBirthday = false">
+                          Cancel
+                        </v-btn>
+                        <v-btn text color="primary" @click="$refs.CalendarDateBirthday.save(OrderForm.birthdate)">
+                          OK
+                        </v-btn>
+                      </v-date-picker>
+                    </v-menu>
+                  </v-col>
+                  <v-col cols="6">
+                    <v-text-field
+                        v-model="OrderForm.age"
+                        label="Возраст"
+                        hide-details="auto"
+                    />
+                  </v-col>
+                  <v-col cols="12">
+                    <v-text-field
+                        v-model="OrderForm.address"
+                        label="Адрес"
+                        hide-details="auto"
+                    />
+                  </v-col>
+                  <v-col cols="12">
+                    <v-text-field
+                        v-model="OrderForm.phone"
+                        label="Телефон"
+                        hide-details="auto"
+                    />
+                  </v-col>
+                  <v-col cols="12">
+                    <v-text-field
+                        v-model="OrderForm.cellphone"
+                        label="Моб.телефон"
+                        hide-details="auto"
+                    />
+                  </v-col>
+                  <v-col cols="12">
+                    <v-text-field
+                        v-model="OrderForm.email"
+                        label="Email"
+                        hide-details="auto"
+                    />
+                  </v-col>
+                  <v-col cols="12">
+                    <v-checkbox
+                        v-model="OrderForm.is_sms"
+                        color="#64219e"
+                        label="Смс о готовности"
+                        hide-details="auto"
+                    />
+                  </v-col>
+                  <v-col cols="12">
+                    <v-select
+                        v-model="OrderForm.credential"
+                        :items="document"
+                        label="Документ, удостоверяющий личность"
+                        hide-details="auto"
+                    />
+                  </v-col>
+                  <v-col cols="6">
+                    <v-text-field
+                        v-model="OrderForm.cred_serie"
+                        label="Серия"
+                        hide-details="auto"
+                    />
+                  </v-col>
+                  <v-col cols="6">
+                    <v-text-field
+                        v-model="OrderForm.cred_number"
+                        label="Номер Серия"
+                        hide-details="auto"
+                    />
+                  </v-col>
+                  <v-col cols="6">
+                    <v-menu
+                        ref="CalendarDateRegistrationPassport"
+                        v-model="CalendarDateRegistrationPassport"
+                        :close-on-content-click="false"
+                        :return-value.sync="OrderForm.kvit_date"
+                        transition="scale-transition"
+                        offset-y
+                        min-width="auto"
+                    >
+                      <template v-slot:activator="{ on, attrs }">
+                        <v-text-field
+                            v-model="OrderForm.cred_when"
+                            label="Когда выдан: выбрать дату"
+                            append-icon="mdi-calendar"
+                            readonly
+                            v-bind="attrs"
+                            v-on="on"
+                            hide-details="auto"
+                        />
+                      </template>
+                      <v-date-picker v-model="OrderForm.cred_when" no-title scrollable>
+                        <v-spacer></v-spacer>
+                        <v-btn text color="primary" @click="CalendarDateRegistrationPassport = false">
+                          Cancel
+                        </v-btn>
+                        <v-btn text color="primary" @click="$refs.CalendarDateRegistrationPassport.save(OrderForm.cred_when)">
+                          OK
+                        </v-btn>
+                      </v-date-picker>
+                    </v-menu>
+                  </v-col>
+                  <v-col cols="6">
+                    <v-text-field
+                        v-model="OrderForm.cred_whom"
+                        label="Кем выдан"
+                        hide-details="auto"
+                    />
+                  </v-col>
+                  <v-col cols="12">
+                    <v-text-field
+                        v-model="OrderForm.facil_code"
+                        label="Код подразделения"
+                        hide-details="auto"
+                    />
+                  </v-col>
+                </v-row>
+                <v-row>
+                  <v-col cols="auto">
+                    <v-btn depressed color="primary" @click="sendOrderForm">
+                      Печать договора
+                    </v-btn>
+                  </v-col>
+                  <v-col cols="auto">
+                    <v-btn depressed color="primary" @click="sendOrderForm">
+                      Согласие на ВИЧ
+                    </v-btn>
+                  </v-col>
+                  <v-col cols="auto">
+                    <v-btn depressed color="primary" @click="sendOrderForm">
+                      Разрешение на e-mail
+                    </v-btn>
+                  </v-col>
+                </v-row>
+              </v-container>
+            </v-form>
+          </v-app>
+              `,
+        vuetify: new Vuetify({
+          theme: {
+            options: {
+              customProperties: true,
+            },
+            themes: {
+              light: {
+                primary: '#64219e',
+              },
+            }
+          },
+          icons: {
+            iconfont: 'mdi',
+          },
+        }),
+        data: () => ({
+          date: new Date().toISOString().substr(0, 10),
+          people: ['Sandra Adams', 'Sandra Adams2', 'AMAD DAKDKAD', 'какой-то челик'],
+          document: ['Паспорт', 'Водительское', 'Завещание', 'Steam аккаунт'],
+          gender: ['Мужской', 'Женский', 'Феминистка'],
+          CalendarDate: false,
+          CalendarDateBirthday: false,
+          CalendarDateRegistrationPassport: false,
+          OrderForm: {
+            num: '',
+            kvit_date: '',
+            dir_dr: '',
+            fio: '',
+            gender: '',
+            birthdate: '',
+            age: '',
+            address: '',
+            phone: '',
+            cellphone: '',
+            email: '',
+            is_sms: false,
+            credential: '',
+            cred_serie: '',
+            cred_number: '',
+            cred_when: '',
+            cred_whom: '',
+            facil_code: '',
+          },
+        }),
+        methods: {
+          sendOrderForm() {
+            console.log('workButton!', this.OrderForm);
+          },
+        },
+        computed: {
+          startDate() {
+            return this.OrderForm.kvit_date;
+            // if (this.OrderForm.kvit_date) {
+            //   return this.$moment(new Date(this.entityContractForm.doc_date)).format('DD.MM.YYYY');
+            // }
+            // return null
+          },
+        },
+      });
+    });
+  </script>
+{{/global/form-section}}
