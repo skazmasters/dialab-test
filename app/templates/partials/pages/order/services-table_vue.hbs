@@ -1,0 +1,230 @@
+{{#>global/form-section title="Услуги квитанции"}}
+  <div class="text-uppercase color-secondary">
+    <p>Услуги: <span>0</span>, комплексы <span>0</span></p>
+  </div>
+
+  <div id="orderTable"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      new Vue({
+        el: '#orderTable',
+        template: `
+          <v-app>
+            <v-card flat>
+              <v-card-text  class="px-0">
+                <v-container>
+                  <v-row>
+                    <v-col cols="6">
+                      <v-text-field
+                          label="№ квитанции"
+                          hide-details="auto"
+                      />
+                    </v-col>
+                    <v-col cols="6">
+                      <v-text-field
+                          label="Выбрать дату"
+                          append-icon="mdi-calendar"
+                          hide-details="auto"
+                          readonly
+                      />
+                    </v-col>
+                    <v-col cols="12">
+                      <v-text-field
+                          label="Направивший врач"
+                          append-icon="mdi-magnify"
+                          hide-details="auto"
+                      />
+                    </v-col>
+                    <v-col cols="12">
+                      <v-text-field
+                          label="Фио пациента"
+                          append-icon="mdi-magnify"
+                          hide-details="auto"
+                      />
+                    </v-col>
+                  </v-row>
+                </v-container>
+              </v-card-text>
+            </v-card>
+
+            <v-card class="mt-5" flat>
+              <v-spacer></v-spacer>
+
+              <v-data-table
+                  :headers="headers"
+                  :items="desserts"
+                  sort-by="calories"
+                  class="elevation-1"
+                  :search="search"
+              >
+                <template v-slot:top>
+                  <v-card-actions class="mb-4">
+                    <v-container class="col-auto pl-0 pr-10">
+                      <v-row>
+                        <v-col cols="auto">
+                          <v-btn depressed color="primary">
+                            Оплатить
+                          </v-btn>
+                        </v-col>
+                        <v-col cols="auto">
+                          <v-btn depressed color="primary">
+                            Сохранить и закрыть
+                          </v-btn>
+                        </v-col>
+                        <v-col cols="auto">
+                          <v-btn depressed color="primary">
+                            Отмена
+                          </v-btn>
+                        </v-col>
+                      </v-row>
+                    </v-container>
+                    <v-text-field
+                        class="mt-0 pt-0"
+                        v-model="search"
+                        append-icon="mdi-magnify"
+                        label="Поиск"
+                        single-line
+                        hide-details="auto"
+                    ></v-text-field>
+                  </v-card-actions>
+                </template>
+                <template v-slot:item.delete_record="{ item }">
+                  <v-icon small @click="deleteItemConfirm(item)">mdi-delete</v-icon>
+                </template>
+              </v-data-table>
+            </v-card>
+          </v-app>
+              `,
+        vuetify: new Vuetify({
+          theme: {
+            options: {
+              customProperties: true,
+            },
+            themes: {
+              light: {
+                primary: '#64219e',
+              },
+            }
+          },
+          icons: {
+            iconfont: 'mdi',
+          },
+        }),
+        data: () => ({
+          search: '',
+          editedIndex: -1,
+          headers: [
+            {
+              text: 'Код',
+              align: 'start',
+              sortable: false,
+              value: 'code',
+            },
+            { text: 'Наименование', value: 'name' },
+            { text: 'Кол-во', value: 'count' },
+            { text: 'Тип цены', value: 'type_price' },
+            { text: 'Валюта', value: 'currency' },
+            { text: 'Цена', value: 'price' },
+            { text: 'Сумма', value: 'sum' },
+            { text: '+/-(%)', value: 'percent' },
+            { text: "Скидка/Надбавка", value: 'discount' },
+            { text: 'К оплате', value: 'bill' },
+            { text: 'Срок вып. дни', value: 'count_days' },
+            { text: 'Удалить', value: 'delete_record' },
+          ],
+          desserts: [
+            {
+              code: 'K1',
+              name: 'Общий анализ крови с лейкоцитами',
+              count: 2,
+              type_price: "Касса",
+              currency: 'Рубль',
+              price: 40.000,
+              sum: 40.000,
+              percent: '0%',
+              discount: '0%',
+              bill: 40.000,
+              count_days: 2,
+              delete_record: 2,
+            },
+            {
+              code: 'K1',
+              name: 'Исследование кала на расширенный спектр...',
+              count: 2,
+              type_price: "Касса",
+              currency: 'Рубль',
+              price: 40.000,
+              sum: 40.000,
+              percent: '0%',
+              discount: '0%',
+              bill: 40.000,
+              count_days: 2,
+              delete_record: 2,
+            },
+            {
+              code: 'K1',
+              name: 'Подсчет тромбоцитов',
+              count: 2,
+              type_price: "Касса",
+              currency: 'Рубль',
+              price: 40.000,
+              sum: 40.000,
+              percent: '0%',
+              discount: '0%',
+              bill: 40.000,
+              count_days: 2,
+              delete_record: 2,
+            },
+            {
+              code: 'K1',
+              name: 'Определение ретикулоцитов',
+              count: 2,
+              type_price: "Касса",
+              currency: 'Рубль',
+              price: 40.000,
+              sum: 40.000,
+              percent: '0%',
+              discount: '0%',
+              bill: 40.000,
+              count_days: 2,
+              delete_record: 2,
+            },
+            {
+              code: 'K1',
+              name: 'Общий анализ крови с лейкоцитами',
+              count: 2,
+              type_price: "Касса",
+              currency: 'Рубль',
+              price: 40.000,
+              sum: 40.000,
+              percent: '0%',
+              discount: '0%',
+              bill: 40.000,
+              count_days: 2,
+              delete_record: 2,
+            },
+            {
+              code: 'K1',
+              name: 'Общий анализ крови с лейкоцитами',
+              count: 2,
+              type_price: "Касса",
+              currency: 'Рубль',
+              price: 40.000,
+              sum: 40.000,
+              percent: '0%',
+              discount: '0%',
+              bill: 40.000,
+              count_days: 2,
+              delete_record: 2,
+            },
+          ],
+        }),
+        methods: {
+          deleteItemConfirm() {
+            this.desserts.splice(this.editedIndex, 1)
+          },
+        },
+      });
+    });
+  </script>
+{{/global/form-section}}
