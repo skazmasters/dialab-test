@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1"><meta name="format-detection" content="telephone=no"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>Процедурный Кабинет / Новая заявка</title><meta name="msapplication-config" content="../assets/favicon/browserconfig.xml"><link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png"><link rel="manifest" href="../assets/favicon/site.webmanifest" crossorigin="use-credentials"><link rel="mask-icon" href="../assets/favicon/safari-pinned-tab.svg" color="#ff003a"><meta name="msapplication-TileColor" content="#2b5797"><meta name="theme-color" content="#ffffff"><!-- Google --><link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><link rel="stylesheet" href="../css/main.min.css?v=3643"><link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet"></head><body class="page"><div class="preloader js-preloader"></div><div class="page__inner"><header class="header page__header"><div class="header__container container"><div class="header__top header-top"><div class="header-top__logo"><picture><source data-srcset="../assets/images/common/logo.png" type="image/png"><img class="lazy" data-sizes="auto" data-original="../assets/images/common/logo.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Логотип компании"></picture></div><div class="header-top__user user-profile dropdown-box js-toggle"><button class="user-profile__dropdown dropdown-box__btn js-toggle__btn"><span class="dropdown-box__caret"><svg focusable="false" width="16" height="16" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M1.88 3.33337L8 9.44004L14.12 3.33337L16 5.21337L8 13.2134L0 5.21337L1.88 3.33337Z" fill="currentColor"/></svg> </span><span class="dropdown-box__label">Тест Докторов</span></button><div class="dropdown-box__container js-toggle__container"><ul class="dropdown-box__container-inner"><li class="dropdown-box__item"><a href="#" class="dropdown-box__link"><span class="dropdown-box__icon material-icons">logout</span> Выход</a></li></ul></div></div></div><div class="header__menu header-menu"><nav class="header-menu__nav header-nav"><ul class="header-nav__list"><li class="header-nav__item"><span class="header-nav__link active">Новая заявка</span></li><li class="header-nav__item"><a href="#" class="header-nav__link">Квитанции</a></li><li class="header-nav__item"><a href="#" class="header-nav__link">Заказы</a></li><li class="header-nav__item"><a href="#" class="header-nav__link">Пациенты</a></li><li class="header-nav__item"><a href="#" class="header-nav__link">Отчеты</a></li><li class="header-nav__item dropdown-box dropdown-box--hover"><a href="#" class="header-nav__link dropdown-box__btn"><span class="dropdown-box__label">Справочники</span> <span class="dropdown-box__caret"><svg focusable="false" width="16" height="16" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M1.88 3.33337L8 9.44004L14.12 3.33337L16 5.21337L8 13.2134L0 5.21337L1.88 3.33337Z" fill="currentColor"/></svg></span></a><div class="dropdown-box__container"><ul class="dropdown-box__container-inner"><li class="dropdown-box__item"><a href="#" class="dropdown-box__link">Ссылка</a></li><li class="dropdown-box__item"><a href="#" class="dropdown-box__link">Ссылка и очень длинное название</a></li><li class="dropdown-box__item"><a href="#" class="dropdown-box__link">Ссылка</a></li><li class="dropdown-box__item"><a href="#" class="dropdown-box__link">Ссылка</a></li></ul></div></li><li class="header-nav__item"><a href="#" class="header-nav__link">Настройки</a></li></ul></nav><div class="header-menu__icon"><svg class="ham hamRotate ham4" viewbox="0 0 100 100" width="50" onclick="this.closest('.header__menu').classList.toggle('menu-opened')"><path class="line top" d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"/><path class="line middle" d="m 70,50 h -40"/><path class="line bottom" d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"/></svg></div></div></div></header><main class="page__content"><div class="layout-main"><div class="container gap-t-30"><p class="text-sm text-right"><a class="link-primary" href="#">Помощь</a></p><section class="section"><h2 class="section__header">Создание заказа</h2><div class="section__content"><div class="form-section bg-white"><div class="form-section__header"><h3 class="form-section__title">Данные пациента</h3></div><div class="form-section__content"><div id="orderForm"></div><script>document.addEventListener('DOMContentLoaded', () => {
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1"><meta name="format-detection" content="telephone=no"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>Процедурный Кабинет / Новая заявка</title><meta name="msapplication-config" content="../assets/favicon/browserconfig.xml"><link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png"><link rel="manifest" href="../assets/favicon/site.webmanifest" crossorigin="use-credentials"><link rel="mask-icon" href="../assets/favicon/safari-pinned-tab.svg" color="#ff003a"><meta name="msapplication-TileColor" content="#2b5797"><meta name="theme-color" content="#ffffff"><!-- Google --><link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><link rel="stylesheet" href="../css/main.min.css?v=2697"><link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet"></head><body class="page"><div class="preloader js-preloader"></div><div class="page__inner"><header class="header page__header"><div class="header__container container"><div class="header__top header-top"><div class="header-top__logo"><picture><source data-srcset="../assets/images/common/logo.png" type="image/png"><img class="lazy" data-sizes="auto" data-original="../assets/images/common/logo.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Логотип компании"></picture></div><div class="header-top__user user-profile dropdown-box js-toggle"><button class="user-profile__dropdown dropdown-box__btn js-toggle__btn"><span class="dropdown-box__caret"><svg focusable="false" width="16" height="16" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M1.88 3.33337L8 9.44004L14.12 3.33337L16 5.21337L8 13.2134L0 5.21337L1.88 3.33337Z" fill="currentColor"/></svg> </span><span class="dropdown-box__label">Тест Докторов</span></button><div class="dropdown-box__container js-toggle__container"><ul class="dropdown-box__container-inner"><li class="dropdown-box__item"><a href="#" class="dropdown-box__link"><span class="dropdown-box__icon material-icons">logout</span> Выход</a></li></ul></div></div></div><div class="header__menu header-menu"><nav class="header-menu__nav header-nav"><ul class="header-nav__list"><li class="header-nav__item"><span class="header-nav__link active">Новая заявка</span></li><li class="header-nav__item"><a href="#" class="header-nav__link">Квитанции</a></li><li class="header-nav__item"><a href="#" class="header-nav__link">Заказы</a></li><li class="header-nav__item"><a href="#" class="header-nav__link">Пациенты</a></li><li class="header-nav__item"><a href="#" class="header-nav__link">Отчеты</a></li><li class="header-nav__item dropdown-box dropdown-box--hover"><a href="#" class="header-nav__link dropdown-box__btn"><span class="dropdown-box__label">Справочники</span> <span class="dropdown-box__caret"><svg focusable="false" width="16" height="16" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M1.88 3.33337L8 9.44004L14.12 3.33337L16 5.21337L8 13.2134L0 5.21337L1.88 3.33337Z" fill="currentColor"/></svg></span></a><div class="dropdown-box__container"><ul class="dropdown-box__container-inner"><li class="dropdown-box__item"><a href="#" class="dropdown-box__link">Ссылка</a></li><li class="dropdown-box__item"><a href="#" class="dropdown-box__link">Ссылка и очень длинное название</a></li><li class="dropdown-box__item"><a href="#" class="dropdown-box__link">Ссылка</a></li><li class="dropdown-box__item"><a href="#" class="dropdown-box__link">Ссылка</a></li></ul></div></li><li class="header-nav__item"><a href="#" class="header-nav__link">Настройки</a></li></ul></nav><div class="header-menu__icon"><svg class="ham hamRotate ham4" viewbox="0 0 100 100" width="50" onclick="this.closest('.header__menu').classList.toggle('menu-opened')"><path class="line top" d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"/><path class="line middle" d="m 70,50 h -40"/><path class="line bottom" d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"/></svg></div></div></div></header><main class="page__content"><div class="layout-main"><div class="container gap-t-30"><p class="text-sm text-right"><a class="link-primary" href="#">Помощь</a></p><section class="section"><h1 class="section__header">Создание заказа</h1><div class="section__content"><article class="form-section"><h2 class="form-section__title">Данные пациента</h2><div class="form-section__content bg-white"><div id="orderForm"></div><script>document.addEventListener('DOMContentLoaded', () => {
                     const vueOrderDetailsForm = new Vue({
                       el: '#orderForm',
                       template: `
@@ -6,14 +6,16 @@
                           <v-form ref="form">
                             <v-container class="px-0">
                               <v-row>
-                                <v-col cols="6">
+                                <v-col cols="6" lg="4">
                                   <v-text-field
                                       v-model="OrderForm.num"
                                       label="№ квитанции"
+                                      placeholder="Подсказка"
                                       hide-details="auto"
+                                      clearable
                                   />
                                 </v-col>
-                                <v-col cols="6">
+                                <v-col cols="6" lg="4">
                                   <v-menu
                                       ref="CalendarDate"
                                       v-model="CalendarDate"
@@ -27,11 +29,13 @@
                                       <v-text-field
                                           v-model="OrderForm.kvit_date"
                                           label="Выбрать дату"
-                                          append-icon="mdi-calendar"
+                                          placeholder="dd/mm/yyyy"
+                                          prepend-icon="mdi-calendar"
                                           readonly
                                           v-bind="attrs"
                                           v-on="on"
                                           hide-details="auto"
+                                          clearable
                                       />
                                     </template>
                                     <v-date-picker v-model="OrderForm.kvit_date" no-title scrollable>
@@ -45,11 +49,14 @@
                                     </v-date-picker>
                                   </v-menu>
                                 </v-col>
-                                <v-col cols="12">
+                                <v-col cols="12" lg="4">
                                   <v-text-field
                                       v-model="OrderForm.dir_dr"
                                       label="Направивший врач"
+                                      prepend-icon="mdi-magnify"
+                                      append-outer-icon="mdi-account-edit"
                                       hide-details="auto"
+                                      clearable
                                   />
                                 </v-col>
                                 <v-col cols="12">
@@ -57,11 +64,11 @@
                                       v-model="OrderForm.fio"
                                       label="Пациент ФИО"
                                       :items="people"
-                                      append-icon="mdi-magnify"
+                                      prepend-icon="mdi-magnify"
                                       hide-details="auto"
                                   />
                                 </v-col>
-                                <v-col cols="12">
+                                <v-col cols="12" lg="4">
                                   <v-select
                                       v-model="OrderForm.gender"
                                       label="Пол"
@@ -69,7 +76,7 @@
                                       hide-details="auto"
                                   />
                                 </v-col>
-                                <v-col cols="6">
+                                <v-col cols="6" lg="4">
                                   <v-menu
                                       ref="CalendarDateBirthday"
                                       v-model="CalendarDateBirthday"
@@ -82,8 +89,8 @@
                                     <template v-slot:activator="{ on, attrs }">
                                       <v-text-field
                                           v-model="OrderForm.birthdate"
-                                          label="Дата рождения: выбрать дату"
-                                          append-icon="mdi-calendar"
+                                          label="Дата рождения"
+                                          prepend-icon="mdi-calendar"
                                           readonly
                                           v-bind="attrs"
                                           v-on="on"
@@ -101,35 +108,35 @@
                                     </v-date-picker>
                                   </v-menu>
                                 </v-col>
-                                <v-col cols="6">
+                                <v-col cols="6" lg="4">
                                   <v-text-field
                                       v-model="OrderForm.age"
                                       label="Возраст"
                                       hide-details="auto"
                                   />
                                 </v-col>
-                                <v-col cols="12">
+                                <v-col cols="12" lg="6">
                                   <v-text-field
                                       v-model="OrderForm.address"
                                       label="Адрес"
                                       hide-details="auto"
                                   />
                                 </v-col>
-                                <v-col cols="12">
+                                <v-col cols="12" lg="6">
                                   <v-text-field
                                       v-model="OrderForm.phone"
                                       label="Телефон"
                                       hide-details="auto"
                                   />
                                 </v-col>
-                                <v-col cols="12">
+                                <v-col cols="12" lg="6">
                                   <v-text-field
                                       v-model="OrderForm.cellphone"
                                       label="Моб.телефон"
                                       hide-details="auto"
                                   />
                                 </v-col>
-                                <v-col cols="12">
+                                <v-col cols="12" lg="6">
                                   <v-text-field
                                       v-model="OrderForm.email"
                                       label="Email"
@@ -144,7 +151,7 @@
                                       hide-details="auto"
                                   />
                                 </v-col>
-                                <v-col cols="12">
+                                <v-col cols="12" lg="4">
                                   <v-select
                                       v-model="OrderForm.credential"
                                       :items="document"
@@ -152,21 +159,21 @@
                                       hide-details="auto"
                                   />
                                 </v-col>
-                                <v-col cols="6">
+                                <v-col cols="6" lg="4">
                                   <v-text-field
                                       v-model="OrderForm.cred_serie"
                                       label="Серия"
                                       hide-details="auto"
                                   />
                                 </v-col>
-                                <v-col cols="6">
+                                <v-col cols="6" lg="4">
                                   <v-text-field
                                       v-model="OrderForm.cred_number"
-                                      label="Номер Серия"
+                                      label="Номер серии"
                                       hide-details="auto"
                                   />
                                 </v-col>
-                                <v-col cols="6">
+                                <v-col cols="6" lg="4">
                                   <v-menu
                                       ref="CalendarDateRegistrationPassport"
                                       v-model="CalendarDateRegistrationPassport"
@@ -179,8 +186,8 @@
                                     <template v-slot:activator="{ on, attrs }">
                                       <v-text-field
                                           v-model="OrderForm.cred_when"
-                                          label="Когда выдан: выбрать дату"
-                                          append-icon="mdi-calendar"
+                                          label="Дата выдачи документа"
+                                          prepend-icon="mdi-calendar"
                                           readonly
                                           v-bind="attrs"
                                           v-on="on"
@@ -198,36 +205,19 @@
                                     </v-date-picker>
                                   </v-menu>
                                 </v-col>
-                                <v-col cols="6">
+                                <v-col cols="6" lg="4">
                                   <v-text-field
                                       v-model="OrderForm.cred_whom"
                                       label="Кем выдан"
                                       hide-details="auto"
                                   />
                                 </v-col>
-                                <v-col cols="12">
+                                <v-col cols="12" lg="4">
                                   <v-text-field
                                       v-model="OrderForm.facil_code"
                                       label="Код подразделения"
                                       hide-details="auto"
                                   />
-                                </v-col>
-                              </v-row>
-                              <v-row>
-                                <v-col cols="auto">
-                                  <v-btn depressed color="primary" @click="sendOrderForm">
-                                    Печать договора
-                                  </v-btn>
-                                </v-col>
-                                <v-col cols="auto">
-                                  <v-btn depressed color="primary" @click="sendOrderForm">
-                                    Согласие на ВИЧ
-                                  </v-btn>
-                                </v-col>
-                                <v-col cols="auto">
-                                  <v-btn depressed color="primary" @click="sendOrderForm">
-                                    Разрешение на e-mail
-                                  </v-btn>
                                 </v-col>
                               </v-row>
                             </v-container>
@@ -293,13 +283,61 @@
                         },
                       },
                     });
-                  });</script></div></div><div class="form-section bg-white"><div class="form-section__header"><h3 class="form-section__title">Услуги квитанции</h3></div><div class="form-section__content"><div class="text-uppercase color-secondary"><p>Услуги: <span>0</span>, комплексы <span>0</span></p></div><div id="orderTable"></div><script>document.addEventListener('DOMContentLoaded', () => {
+                  });</script></div></article><article class="form-section"><div class="form-section__content bg-white form-section__content--equal"><div id="orderFormButtons"></div><script>document.addEventListener('DOMContentLoaded', () => {
+                    const vueOrderFormButtons = new Vue({
+                      el: '#orderFormButtons',
+                      template: `
+                        <v-app>
+                          <v-container class="pa-0">
+                            <v-row>
+                              <v-col cols="auto">
+                                <v-btn depressed color="primary">
+                                  Печать договора
+                                </v-btn>
+                              </v-col>
+                              <v-col cols="auto">
+                                <v-btn depressed color="primary">
+                                  Согласие на ВИЧ
+                                </v-btn>
+                              </v-col>
+                              <v-col cols="auto">
+                                <v-btn depressed color="primary">
+                                  Разрешение на e-mail
+                                </v-btn>
+                              </v-col>
+                            </v-row>
+                          </v-container>
+                        </v-app>
+                            `,
+                      vuetify: new Vuetify({
+                        theme: {
+                          options: {
+                            customProperties: true,
+                          },
+                          themes: {
+                            light: {
+                              primary: '#64219e',
+                            },
+                          }
+                        },
+                      }),
+                      data: () => ({
+              
+                      }),
+                      methods: {
+              
+                      },
+                      computed: {
+              
+                      },
+                    });
+                  });</script></div></article><article class="form-section"><h2 class="form-section__title">Услуги квитанции</h2><div class="form-section__content bg-white"><div class="text-uppercase color-secondary"><p>Услуги: <span>0</span>, комплексы <span>0</span></p></div><div id="orderTable"></div><script>document.addEventListener('DOMContentLoaded', () => {
                     new Vue({
                       el: '#orderTable',
                       template: `
                         <v-app>
                           <v-card flat>
-                            <v-card-text  class="px-0">
+                            <v-card-text class="px-0">
                               <v-container>
                                 <v-row>
                                   <v-col cols="6">
@@ -336,9 +374,8 @@
                           </v-card>
               
                           <v-card class="mt-5" flat>
-                            <v-spacer></v-spacer>
-              
                             <v-data-table
+                                dense
                                 :headers="headers"
                                 :items="desserts"
                                 sort-by="calories"
@@ -513,4 +550,4 @@
                         },
                       },
                     });
-                  });</script></div></div></div></section></div></div></main><footer class="footer page__footer"><div class="footer-top container"><div class="footer-top__brand"><p class="footer-top__brand-title">Процедурный кабинет v.3.25 - [[ТУЛА-3]]</p></div></div></footer></div><script src="../scripts/vendors.js?v=3643" defer="defer"></script><script src="../scripts/main.js?v=3643" defer="defer"></script></body></html><!-- Scripts --><script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.min.js" defer="defer"></script><script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.js" defer="defer"></script>
+                  });</script></div></article></div></section></div></div></main><footer class="footer page__footer"><div class="footer-top container"><div class="footer-top__brand"><p class="footer-top__brand-title">Процедурный кабинет v.3.25 - [[ТУЛА-3]]</p></div></div></footer></div><script src="../scripts/vendors.js?v=2697" defer="defer"></script><script src="../scripts/main.js?v=2697" defer="defer"></script></body></html><!-- Scripts --><script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.min.js" defer="defer"></script><script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.js" defer="defer"></script>
