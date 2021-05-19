@@ -39,7 +39,7 @@
       color: var(--color-gray-100);
     }
 
-    &.active {
+    .active & {
       color: var(--color-primary);
       border-color: var(--color-primary);
       cursor: default;

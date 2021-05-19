@@ -92,6 +92,15 @@
     &:hover {
       background-color: var(--color-gray-20);
     }
+
+    .active & {
+      color: var(--color-primary);
+      cursor: default;
+
+      @include media(tablet) {
+        border-color: transparent;
+      }
+    }
   }
 
   &__icon {
