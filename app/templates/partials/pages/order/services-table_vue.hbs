@@ -11,7 +11,7 @@
         template: `
           <v-app>
             <v-card flat>
-              <v-card-text  class="px-0">
+              <v-card-text class="px-0">
                 <v-container>
                   <v-row>
                     <v-col cols="6">
@@ -48,9 +48,8 @@
             </v-card>
 
             <v-card class="mt-5" flat>
-              <v-spacer></v-spacer>
-
               <v-data-table
+                  dense
                   :headers="headers"
                   :items="desserts"
                   sort-by="calories"

@@ -1,6 +1,10 @@
 <section class="section">
   {{#if title}}
-    <h2 class="section__header">{{title}}</h2>
+    {{#if h1}}
+      <h1 class="section__header">{{title}}</h1>
+    {{else}}
+      <h2 class="section__header">{{title}}</h2>
+    {{/if}}
   {{/if}}
 
   <div class="section__content">

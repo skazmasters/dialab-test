@@ -9,14 +9,16 @@
             <v-form ref="form">
               <v-container class="px-0">
                 <v-row>
-                  <v-col cols="6">
+                  <v-col cols="6" lg="4">
                     <v-text-field
                         v-model="OrderForm.num"
                         label="№ квитанции"
+                        placeholder="Подсказка"
                         hide-details="auto"
+                        clearable
                     />
                   </v-col>
-                  <v-col cols="6">
+                  <v-col cols="6" lg="4">
                     <v-menu
                         ref="CalendarDate"
                         v-model="CalendarDate"
@@ -30,11 +32,13 @@
                         <v-text-field
                             v-model="OrderForm.kvit_date"
                             label="Выбрать дату"
-                            append-icon="mdi-calendar"
+                            placeholder="dd/mm/yyyy"
+                            prepend-icon="mdi-calendar"
                             readonly
                             v-bind="attrs"
                             v-on="on"
                             hide-details="auto"
+                            clearable
                         />
                       </template>
                       <v-date-picker v-model="OrderForm.kvit_date" no-title scrollable>
@@ -48,11 +52,14 @@
                       </v-date-picker>
                     </v-menu>
                   </v-col>
-                  <v-col cols="12">
+                  <v-col cols="12" lg="4">
                     <v-text-field
                         v-model="OrderForm.dir_dr"
                         label="Направивший врач"
+                        prepend-icon="mdi-magnify"
+                        append-outer-icon="mdi-account-edit"
                         hide-details="auto"
+                        clearable
                     />
                   </v-col>
                   <v-col cols="12">
@@ -60,11 +67,11 @@
                         v-model="OrderForm.fio"
                         label="Пациент ФИО"
                         :items="people"
-                        append-icon="mdi-magnify"
+                        prepend-icon="mdi-magnify"
                         hide-details="auto"
                     />
                   </v-col>
-                  <v-col cols="12">
+                  <v-col cols="12" lg="4">
                     <v-select
                         v-model="OrderForm.gender"
                         label="Пол"
@@ -72,7 +79,7 @@
                         hide-details="auto"
                     />
                   </v-col>
-                  <v-col cols="6">
+                  <v-col cols="6" lg="4">
                     <v-menu
                         ref="CalendarDateBirthday"
                         v-model="CalendarDateBirthday"
@@ -85,8 +92,8 @@
                       <template v-slot:activator="{ on, attrs }">
                         <v-text-field
                             v-model="OrderForm.birthdate"
-                            label="Дата рождения: выбрать дату"
-                            append-icon="mdi-calendar"
+                            label="Дата рождения"
+                            prepend-icon="mdi-calendar"
                             readonly
                             v-bind="attrs"
                             v-on="on"
@@ -104,35 +111,35 @@
                       </v-date-picker>
                     </v-menu>
                   </v-col>
-                  <v-col cols="6">
+                  <v-col cols="6" lg="4">
                     <v-text-field
                         v-model="OrderForm.age"
                         label="Возраст"
                         hide-details="auto"
                     />
                   </v-col>
-                  <v-col cols="12">
+                  <v-col cols="12" lg="6">
                     <v-text-field
                         v-model="OrderForm.address"
                         label="Адрес"
                         hide-details="auto"
                     />
                   </v-col>
-                  <v-col cols="12">
+                  <v-col cols="12" lg="6">
                     <v-text-field
                         v-model="OrderForm.phone"
                         label="Телефон"
                         hide-details="auto"
                     />
                   </v-col>
-                  <v-col cols="12">
+                  <v-col cols="12" lg="6">
                     <v-text-field
                         v-model="OrderForm.cellphone"
                         label="Моб.телефон"
                         hide-details="auto"
                     />
                   </v-col>
-                  <v-col cols="12">
+                  <v-col cols="12" lg="6">
                     <v-text-field
                         v-model="OrderForm.email"
                         label="Email"
@@ -147,7 +154,7 @@
                         hide-details="auto"
                     />
                   </v-col>
-                  <v-col cols="12">
+                  <v-col cols="12" lg="4">
                     <v-select
                         v-model="OrderForm.credential"
                         :items="document"
@@ -155,21 +162,21 @@
                         hide-details="auto"
                     />
                   </v-col>
-                  <v-col cols="6">
+                  <v-col cols="6" lg="4">
                     <v-text-field
                         v-model="OrderForm.cred_serie"
                         label="Серия"
                         hide-details="auto"
                     />
                   </v-col>
-                  <v-col cols="6">
+                  <v-col cols="6" lg="4">
                     <v-text-field
                         v-model="OrderForm.cred_number"
-                        label="Номер Серия"
+                        label="Номер серии"
                         hide-details="auto"
                     />
                   </v-col>
-                  <v-col cols="6">
+                  <v-col cols="6" lg="4">
                     <v-menu
                         ref="CalendarDateRegistrationPassport"
                         v-model="CalendarDateRegistrationPassport"
@@ -182,8 +189,8 @@
                       <template v-slot:activator="{ on, attrs }">
                         <v-text-field
                             v-model="OrderForm.cred_when"
-                            label="Когда выдан: выбрать дату"
-                            append-icon="mdi-calendar"
+                            label="Дата выдачи документа"
+                            prepend-icon="mdi-calendar"
                             readonly
                             v-bind="attrs"
                             v-on="on"
@@ -201,36 +208,19 @@
                       </v-date-picker>
                     </v-menu>
                   </v-col>
-                  <v-col cols="6">
+                  <v-col cols="6" lg="4">
                     <v-text-field
                         v-model="OrderForm.cred_whom"
                         label="Кем выдан"
                         hide-details="auto"
                     />
                   </v-col>
-                  <v-col cols="12">
+                  <v-col cols="12" lg="4">
                     <v-text-field
                         v-model="OrderForm.facil_code"
                         label="Код подразделения"
                         hide-details="auto"
                     />
-                  </v-col>
-                </v-row>
-                <v-row>
-                  <v-col cols="auto">
-                    <v-btn depressed color="primary" @click="sendOrderForm">
-                      Печать договора
-                    </v-btn>
-                  </v-col>
-                  <v-col cols="auto">
-                    <v-btn depressed color="primary" @click="sendOrderForm">
-                      Согласие на ВИЧ
-                    </v-btn>
-                  </v-col>
-                  <v-col cols="auto">
-                    <v-btn depressed color="primary" @click="sendOrderForm">
-                      Разрешение на e-mail
-                    </v-btn>
                   </v-col>
                 </v-row>
               </v-container>
@@ -294,6 +284,61 @@
             // }
             // return null
           },
+        },
+      });
+    });
+  </script>
+{{/global/form-section}}
+
+{{#>global/form-section title=0 p-equal=1}}
+  <div id="orderFormButtons"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const vueOrderFormButtons = new Vue({
+        el: '#orderFormButtons',
+        template: `
+          <v-app>
+            <v-container class="pa-0">
+              <v-row>
+                <v-col cols="auto">
+                  <v-btn depressed color="primary">
+                    Печать договора
+                  </v-btn>
+                </v-col>
+                <v-col cols="auto">
+                  <v-btn depressed color="primary">
+                    Согласие на ВИЧ
+                  </v-btn>
+                </v-col>
+                <v-col cols="auto">
+                  <v-btn depressed color="primary">
+                    Разрешение на e-mail
+                  </v-btn>
+                </v-col>
+              </v-row>
+            </v-container>
+          </v-app>
+              `,
+        vuetify: new Vuetify({
+          theme: {
+            options: {
+              customProperties: true,
+            },
+            themes: {
+              light: {
+                primary: '#64219e',
+              },
+            }
+          },
+        }),
+        data: () => ({
+
+        }),
+        methods: {
+
+        },
+        computed: {
+
         },
       });
     });

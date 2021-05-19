@@ -1,10 +1,12 @@
-<div class="form-section bg-white">
+<article class="form-section">
   {{#if title}}
-    <div class="form-section__header">
+    {{#if h1}}
+      <h2 class="form-section__title">{{title}}</h2>
+    {{else}}
       <h3 class="form-section__title">{{title}}</h3>
-    </div>
+    {{/if}}
   {{/if}}
-  <div class="form-section__content">
+  <div class="form-section__content bg-white{{#if p-equal}} form-section__content--equal{{/if}}">
     {{> @partial-block}}
   </div>
-</div>
+</article>
