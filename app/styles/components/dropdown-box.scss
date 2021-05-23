@@ -93,7 +93,7 @@
       background-color: var(--color-gray-20);
     }
 
-    .active & {
+    .dropdown-box__item.active & {
       color: var(--color-primary);
       cursor: default;
 
