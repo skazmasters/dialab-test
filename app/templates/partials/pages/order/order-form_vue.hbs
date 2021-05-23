@@ -2,7 +2,7 @@
   <div id="orderForm"></div>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const vueOrderDetailsForm = new Vue({
+      window._vueClientForm = new Vue({
         el: '#orderForm',
         template: `
           <v-app>
@@ -11,34 +11,34 @@
                 <v-row>
                   <v-col cols="12" md="6" lg="4">
                     <v-text-field
-                        v-model="OrderForm.num"
-                        label="№ квитанции"
-                        placeholder="Подсказка"
-                        hide-details="auto"
-                        clearable
+                      v-model="OrderForm.num"
+                      label="№ квитанции"
+                      placeholder="Подсказка"
+                      hide-details="auto"
+                      clearable
                     />
                   </v-col>
                   <v-col cols="12" md="6" lg="4">
                     <v-menu
-                        ref="CalendarDate"
-                        v-model="CalendarDate"
-                        :close-on-content-click="false"
-                        :return-value.sync="OrderForm.kvit_date"
-                        transition="scale-transition"
-                        offset-y
-                        min-width="auto"
+                      ref="CalendarDate"
+                      v-model="CalendarDate"
+                      :close-on-content-click="false"
+                      :return-value.sync="OrderForm.kvit_date"
+                      transition="scale-transition"
+                      offset-y
+                      min-width="auto"
                     >
                       <template v-slot:activator="{ on, attrs }">
                         <v-text-field
-                            v-model="OrderForm.kvit_date"
-                            label="Выбрать дату"
-                            placeholder="dd/mm/yyyy"
-                            prepend-icon="mdi-calendar"
-                            readonly
-                            v-bind="attrs"
-                            v-on="on"
-                            hide-details="auto"
-                            clearable
+                          v-model="OrderForm.kvit_date"
+                          label="Выбрать дату"
+                          placeholder="dd/mm/yyyy"
+                          prepend-icon="mdi-calendar"
+                          readonly
+                          v-bind="attrs"
+                          v-on="on"
+                          hide-details="auto"
+                          clearable
                         />
                       </template>
                       <v-date-picker v-model="OrderForm.kvit_date" no-title scrollable>
@@ -53,51 +53,56 @@
                     </v-menu>
                   </v-col>
                   <v-col cols="12" sm="6" lg="4">
-                    <v-text-field
-                        v-model="OrderForm.dir_dr"
-                        label="Направивший врач"
-                        prepend-icon="mdi-magnify"
-                        append-outer-icon="mdi-account-plus"
-                        hide-details="auto"
-                        clearable
+                    <v-autocomplete
+                      v-model="OrderForm.dir_dr"
+                      label="Направивший врач"
+                      prepend-icon="mdi-magnify"
+                      append-outer-icon="mdi-account-plus"
+                      :items="autocomplete.autocomplete.dir_dr"
+                      item-text="name"
+                      hide-details="auto"
+                      clearable
                     />
                   </v-col>
                   <v-col cols="12">
                     <v-autocomplete
-                        v-model="OrderForm.fio"
-                        label="Пациент ФИО"
-                        :items="people"
+                        label="ФИО пациента"
+                        :items="autocomplete.autocomplete.fio"
+                        :item-text="item => item.name + ' - ' + moment(item.birthdate).format('DD.MM.YYYY')"
                         prepend-icon="mdi-magnify"
                         hide-details="auto"
+                        clearable
                     />
                   </v-col>
                   <v-col cols="12" sm="6" lg="4">
                     <v-select
-                        v-model="OrderForm.gender"
-                        label="Пол"
-                        :items="gender"
-                        hide-details="auto"
+                      v-model="OrderForm.gender"
+                      label="Пол"
+                      :menu-props="{ bottom: true, offsetY: true }"
+                      :items="selectors.selectors.gender"
+                      item-text="name"
+                      hide-details="auto"
                     />
                   </v-col>
                   <v-col cols="12" md="6" lg="4">
                     <v-menu
-                        ref="CalendarDateBirthday"
-                        v-model="CalendarDateBirthday"
-                        :close-on-content-click="false"
-                        :return-value.sync="OrderForm.birthdate"
-                        transition="scale-transition"
-                        offset-y
-                        min-width="auto"
+                      ref="CalendarDateBirthday"
+                      v-model="CalendarDateBirthday"
+                      :close-on-content-click="false"
+                      :return-value.sync="OrderForm.birthdate"
+                      transition="scale-transition"
+                      offset-y
+                      min-width="auto"
                     >
                       <template v-slot:activator="{ on, attrs }">
                         <v-text-field
-                            v-model="OrderForm.birthdate"
-                            label="Дата рождения"
-                            prepend-icon="mdi-calendar"
-                            readonly
-                            v-bind="attrs"
-                            v-on="on"
-                            hide-details="auto"
+                          v-model="OrderForm.birthdate"
+                          label="Дата рождения"
+                          prepend-icon="mdi-calendar"
+                          readonly
+                          v-bind="attrs"
+                          v-on="on"
+                          hide-details="auto"
                         />
                       </template>
                       <v-date-picker v-model="OrderForm.birthdate" no-title scrollable>
@@ -113,88 +118,90 @@
                   </v-col>
                   <v-col cols="12" md="6" lg="4">
                     <v-text-field
-                        v-model="OrderForm.age"
-                        label="Возраст"
-                        hide-details="auto"
+                      v-model="OrderForm.age"
+                      label="Возраст"
+                      hide-details="auto"
                     />
                   </v-col>
                   <v-col cols="12" lg="6">
                     <v-text-field
-                        v-model="OrderForm.address"
-                        label="Адрес"
-                        hide-details="auto"
+                      v-model="OrderForm.address"
+                      label="Адрес"
+                      hide-details="auto"
                     />
                   </v-col>
                   <v-col cols="12" lg="6">
                     <v-text-field
-                        v-model="OrderForm.phone"
-                        label="Телефон"
-                        hide-details="auto"
+                      v-model="OrderForm.phone"
+                      label="Телефон"
+                      hide-details="auto"
                     />
                   </v-col>
                   <v-col cols="12" lg="6">
                     <v-text-field
-                        v-model="OrderForm.cellphone"
-                        label="Моб.телефон"
-                        hide-details="auto"
+                      v-model="OrderForm.cellphone"
+                      label="Моб.телефон"
+                      hide-details="auto"
                     />
                   </v-col>
                   <v-col cols="12" lg="6">
                     <v-text-field
-                        v-model="OrderForm.email"
-                        label="Email"
-                        hide-details="auto"
+                      v-model="OrderForm.email"
+                      label="Email"
+                      hide-details="auto"
                     />
                   </v-col>
                   <v-col cols="12">
                     <v-checkbox
-                        v-model="OrderForm.is_sms"
-                        color="#64219e"
-                        label="Смс о готовности"
-                        hide-details="auto"
+                      v-model="OrderForm.is_sms"
+                      color="#64219e"
+                      label="Смс о готовности"
+                      hide-details="auto"
                     />
                   </v-col>
                   <v-col cols="12" sm="6" lg="4">
                     <v-select
-                        v-model="OrderForm.credential"
-                        :items="document"
-                        label="Документ, удостоверяющий личность"
-                        hide-details="auto"
+                      v-model="OrderForm.credential"
+                      :items="selectors.selectors.credential"
+                      item-text="name"
+                      label="Документ, удостоверяющий личность"
+                      :menu-props="{ bottom: true, offsetY: true }"
+                      hide-details="auto"
                     />
                   </v-col>
                   <v-col cols="12" md="6" lg="4">
                     <v-text-field
-                        v-model="OrderForm.cred_serie"
-                        label="Серия"
-                        hide-details="auto"
+                      v-model="OrderForm.cred_serie"
+                      label="Серия"
+                      hide-details="auto"
                     />
                   </v-col>
                   <v-col cols="12" md="6" lg="4">
                     <v-text-field
-                        v-model="OrderForm.cred_number"
-                        label="Номер серии"
-                        hide-details="auto"
+                      v-model="OrderForm.cred_number"
+                      label="Номер серии"
+                      hide-details="auto"
                     />
                   </v-col>
                   <v-col cols="12" md="6" lg="4">
                     <v-menu
-                        ref="CalendarDateRegistrationPassport"
-                        v-model="CalendarDateRegistrationPassport"
-                        :close-on-content-click="false"
-                        :return-value.sync="OrderForm.kvit_date"
-                        transition="scale-transition"
-                        offset-y
-                        min-width="auto"
+                      ref="CalendarDateRegistrationPassport"
+                      v-model="CalendarDateRegistrationPassport"
+                      :close-on-content-click="false"
+                      :return-value.sync="OrderForm.kvit_date"
+                      transition="scale-transition"
+                      offset-y
+                      min-width="auto"
                     >
                       <template v-slot:activator="{ on, attrs }">
                         <v-text-field
-                            v-model="OrderForm.cred_when"
-                            label="Дата выдачи документа"
-                            prepend-icon="mdi-calendar"
-                            readonly
-                            v-bind="attrs"
-                            v-on="on"
-                            hide-details="auto"
+                          v-model="OrderForm.cred_when"
+                          label="Дата выдачи документа"
+                          prepend-icon="mdi-calendar"
+                          readonly
+                          v-bind="attrs"
+                          v-on="on"
+                          hide-details="auto"
                         />
                       </template>
                       <v-date-picker v-model="OrderForm.cred_when" no-title scrollable>
@@ -210,16 +217,16 @@
                   </v-col>
                   <v-col cols="12" md="6" lg="4">
                     <v-text-field
-                        v-model="OrderForm.cred_whom"
-                        label="Кем выдан"
-                        hide-details="auto"
+                      v-model="OrderForm.cred_whom"
+                      label="Кем выдан"
+                      hide-details="auto"
                     />
                   </v-col>
                   <v-col cols="12" sm="6" lg="4">
                     <v-text-field
-                        v-model="OrderForm.facil_code"
-                        label="Код подразделения"
-                        hide-details="auto"
+                      v-model="OrderForm.facil_code"
+                      label="Код подразделения"
+                      hide-details="auto"
                     />
                   </v-col>
                 </v-row>
@@ -236,7 +243,7 @@
               light: {
                 primary: '#64219e',
               },
-            }
+            },
           },
           icons: {
             iconfont: 'mdi',
@@ -244,9 +251,167 @@
         }),
         data: () => ({
           date: new Date().toISOString().substr(0, 10),
-          people: ['Sandra Adams', 'Sandra Adams2', 'AMAD DAKDKAD', 'какой-то челик'],
-          document: ['Паспорт', 'Водительское', 'Завещание', 'Steam аккаунт'],
-          gender: ['Мужской', 'Женский', 'Феминистка'],
+          selectors: {
+            'selectors': {
+              'gender': [
+                {
+                  'id': '0',
+                  'name': 'М',
+                },
+                {
+                  'id': '1',
+                  'name': 'Ж',
+                },
+              ],
+              'credential': [
+                {
+                  'id': '',
+                  'name': '-',
+                },
+                {
+                  'id': 'паспорт',
+                  'name': 'паспорт',
+                },
+                {
+                  'id': 'права',
+                  'name': 'права',
+                },
+                {
+                  'id': 'другой',
+                  'name': 'другой',
+                },
+              ],
+              'pay_type': [
+                {
+                  'id': '6',
+                  'name': 'карта',
+                },
+                {
+                  'id': '4',
+                  'name': 'наличные',
+                },
+                {
+                  'id': '7',
+                  'name': 'рс',
+                },
+              ],
+            },
+            'btn_print': [
+              {
+                'id': '10',
+                'name': 'Договор',
+                'href': 'print1.php?a=b',
+              },
+              {
+                'id': '12',
+                'name': 'Согласие на ВИЧ',
+                'href': 'print2.php?a=c',
+              },
+              {
+                'id': '15',
+                'name': 'Разрешение на e-mail',
+                'href': 'print3.php?a=d',
+              },
+            ],
+          },
+          autocomplete: {
+            'autocomplete': {
+              'dir_dr': [
+                {
+                  'id': '39',
+                  'name': '[14603] - Попов Юрий Иванович - акушер-гинеколог',
+                },
+                {
+                  'id': '41',
+                  'name': '[14607] - Сидорова Нина Ивановна - терапевт',
+                },
+                {
+                  'id': '60',
+                  'name': '[11584] - Козлов Игорь Иванович - уролог',
+                },
+                {
+                  'id': '72',
+                  'name': '[15608] - Колесникова Наталья Ивановна - терапевт',
+                },
+                {
+                  'id': '237',
+                  'name': '[12367] - Хромова Светлана Ивановна - гинеколог',
+                },
+                {
+                  'id': '319',
+                  'name': '[12072] - Моева Юлия Ивановна - ревматолог',
+                },
+                {
+                  'id': '336',
+                  'name': '[11574] - Заборов Виктор Иванович - терапевт',
+                },
+              ],
+              'fio': [
+                {
+                  'id': '516',
+                  'name': 'Морозова Ольга Петровна',
+                  'birthdate': '1980-06-02',
+                  'cellphone': '79506000102',
+                },
+                {
+                  'id': '602',
+                  'name': 'Морозова Елена Николаевна',
+                  'birthdate': '1980-05-01',
+                  'cellphone': '79506010203',
+                },
+                {
+                  'id': '736',
+                  'name': 'Морозов Александр Васильевич',
+                  'birthdate': '1960-10-28',
+                  'cellphone': '79506020304',
+                },
+                {
+                  'id': '1015',
+                  'name': 'Морозов Владимир Владимирович',
+                  'birthdate': '2010-05-24',
+                  'cellphone': '79506030405',
+                },
+                {
+                  'id': '1126',
+                  'name': 'Морозова Людмила Васильевна',
+                  'birthdate': '1980-11-14',
+                  'cellphone': '79506050506',
+                },
+              ],
+              'service_search': [
+                {
+                  'id': '1',
+                  'code': 'К1',
+                  'name': 'Общий анализ крови с лейкоцитарной формулой + СОЭ',
+                  'name_other': 'Общ.анализ крови+СОЭ',
+                },
+                {
+                  'id': '16',
+                  'code': 'К12',
+                  'name': 'Исследование кала на расширенный спектр яйц гельминтов и простейших',
+                  'name_other': 'Исследование кала на расширенный спектр яйц гельминтов и простейших',
+                },
+                {
+                  'id': '2076',
+                  'code': 'К13',
+                  'name': 'Исследование кала на расширенный спектр я гл и прост. (обогащенной средой Parasep)',
+                  'name_other': 'Яйца глист. спектр (Parasep)',
+                },
+                {
+                  'id': '2077',
+                  'code': 'К133',
+                  'name': 'Подсчет тромбоцитов по Фонио',
+                  'name_other': 'Фонио',
+                },
+                {
+                  'id': '2',
+                  'code': 'К134',
+                  'name': 'Определение ретикулоцитов',
+                  'name_other': 'Ретикулоцитов определение',
+                },
+              ],
+            },
+          },
           CalendarDate: false,
           CalendarDateBirthday: false,
           CalendarDateRegistrationPassport: false,
@@ -273,19 +438,18 @@
         }),
         methods: {
           sendOrderForm() {
-            console.log('workButton!', this.OrderForm);
+            console.log('data: ', this.OrderForm);
+            return this.OrderForm;
           },
         },
         computed: {
           startDate() {
             return this.OrderForm.kvit_date;
-            // if (this.OrderForm.kvit_date) {
-            //   return this.$moment(new Date(this.entityContractForm.doc_date)).format('DD.MM.YYYY');
-            // }
-            // return null
           },
         },
+        moment: moment
       });
+
     });
   </script>
 {{/global/form-section}}
@@ -328,18 +492,12 @@
               light: {
                 primary: '#64219e',
               },
-            }
+            },
           },
         }),
-        data: () => ({
-
-        }),
-        methods: {
-
-        },
-        computed: {
-
-        },
+        data: () => ({}),
+        methods: {},
+        computed: {},
       });
     });
   </script>
