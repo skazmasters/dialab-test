@@ -1,5 +1,5 @@
-<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1"><meta name="format-detection" content="telephone=no"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>Процедурный Кабинет / Новая заявка</title><meta name="msapplication-config" content="../assets/favicon/browserconfig.xml"><link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png"><link rel="manifest" href="../assets/favicon/site.webmanifest" crossorigin="use-credentials"><link rel="mask-icon" href="../assets/favicon/safari-pinned-tab.svg" color="#ff003a"><meta name="msapplication-TileColor" content="#2b5797"><meta name="theme-color" content="#ffffff"><!-- Google --><link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><link rel="stylesheet" href="../css/main.min.css?v=1671"><link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet"></head><body class="page"><div class="preloader js-preloader"></div><div class="page__inner"><header class="header page__header"><div class="header__container container"><div class="header__top header-top"><div class="header-top__logo"><picture><source data-srcset="../assets/images/common/logo.png" type="image/png"><img class="lazy" data-sizes="auto" data-original="../assets/images/common/logo.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Логотип компании"></picture></div><div class="header-top__user user-profile dropdown-box js-toggle"><button class="user-profile__dropdown dropdown-box__btn js-toggle__btn"><span class="dropdown-box__caret"><svg focusable="false" width="16" height="16" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M1.88 3.33337L8 9.44004L14.12 3.33337L16 5.21337L8 13.2134L0 5.21337L1.88 3.33337Z" fill="currentColor"/></svg> </span><span class="dropdown-box__label">Тест Докторов</span></button><div class="dropdown-box__container js-toggle__container"><ul class="dropdown-box__container-inner"><li class="dropdown-box__item"><a href="#" class="dropdown-box__link"><span class="dropdown-box__icon material-icons">logout</span> Выход</a></li></ul></div></div></div><div class="header__menu header-menu"><nav class="header-menu__nav header-nav"><ul class="header-nav__list"><li class="header-nav__item active"><span class="header-nav__link">Новая заявка</span></li><li class="header-nav__item"><a href="#" class="header-nav__link">Квитанции</a></li><li class="header-nav__item"><a href="#" class="header-nav__link">Заказы</a></li><li class="header-nav__item"><a href="#" class="header-nav__link">Пациенты</a></li><li class="header-nav__item"><a href="#" class="header-nav__link">Отчеты</a></li><li class="header-nav__item dropdown-box dropdown-box--hover"><a href="#" class="header-nav__link dropdown-box__btn"><span class="dropdown-box__label">Справочники</span> <span class="dropdown-box__caret"><svg focusable="false" width="16" height="16" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M1.88 3.33337L8 9.44004L14.12 3.33337L16 5.21337L8 13.2134L0 5.21337L1.88 3.33337Z" fill="currentColor"/></svg></span></a><div class="dropdown-box__container"><ul class="dropdown-box__container-inner"><li class="dropdown-box__item"><a href="#" class="dropdown-box__link">Ссылка</a></li><li class="dropdown-box__item active"><span class="dropdown-box__link">Ссылка и очень длинное название</span></li><li class="dropdown-box__item"><a href="#" class="dropdown-box__link">Ссылка</a></li><li class="dropdown-box__item"><a href="#" class="dropdown-box__link">Ссылка</a></li></ul></div></li><li class="header-nav__item"><a href="#" class="header-nav__link">Настройки</a></li></ul></nav><div class="header-menu__icon"><svg class="ham hamRotate ham4" viewbox="0 0 100 100" width="50" onclick="this.closest('.header__menu').classList.toggle('menu-opened')"><path class="line top" d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"/><path class="line middle" d="m 70,50 h -40"/><path class="line bottom" d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"/></svg></div></div></div></header><main class="page__content"><div class="layout-main"><div class="container gap-t-30"><p class="text-sm text-right"><a class="link-primary" href="#">Помощь</a></p><section class="section"><h1 class="section__header">Создание заказа</h1><div class="section__content"><article class="form-section"><h2 class="form-section__title">Данные пациента</h2><div class="form-section__content bg-white"><div id="orderForm"></div><script>document.addEventListener('DOMContentLoaded', () => {
-                    const vueOrderDetailsForm = new Vue({
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1"><meta name="format-detection" content="telephone=no"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>Процедурный Кабинет / Новая заявка</title><meta name="msapplication-config" content="../assets/favicon/browserconfig.xml"><link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png"><link rel="manifest" href="../assets/favicon/site.webmanifest" crossorigin="use-credentials"><link rel="mask-icon" href="../assets/favicon/safari-pinned-tab.svg" color="#ff003a"><meta name="msapplication-TileColor" content="#2b5797"><meta name="theme-color" content="#ffffff"><!-- Google --><link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><link rel="stylesheet" href="../css/main.min.css?v=3256"><link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet"></head><body class="page"><div class="preloader js-preloader"></div><div class="page__inner"><header class="header page__header"><div class="header__container container"><div class="header__top header-top"><div class="header-top__logo"><picture><source data-srcset="../assets/images/common/logo.png" type="image/png"><img class="lazy" data-sizes="auto" data-original="../assets/images/common/logo.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Логотип компании"></picture></div><div class="header-top__user user-profile dropdown-box js-toggle"><button class="user-profile__dropdown dropdown-box__btn js-toggle__btn"><span class="dropdown-box__caret"><svg focusable="false" width="16" height="16" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M1.88 3.33337L8 9.44004L14.12 3.33337L16 5.21337L8 13.2134L0 5.21337L1.88 3.33337Z" fill="currentColor"/></svg> </span><span class="dropdown-box__label">Тест Докторов</span></button><div class="dropdown-box__container js-toggle__container"><ul class="dropdown-box__container-inner"><li class="dropdown-box__item"><a href="#" class="dropdown-box__link"><span class="dropdown-box__icon material-icons">logout</span> Выход</a></li></ul></div></div></div><div class="header__menu header-menu"><nav class="header-menu__nav header-nav"><ul class="header-nav__list"><li class="header-nav__item active"><span class="header-nav__link">Новая заявка</span></li><li class="header-nav__item"><a href="#" class="header-nav__link">Квитанции</a></li><li class="header-nav__item"><a href="#" class="header-nav__link">Заказы</a></li><li class="header-nav__item"><a href="#" class="header-nav__link">Пациенты</a></li><li class="header-nav__item"><a href="#" class="header-nav__link">Отчеты</a></li><li class="header-nav__item dropdown-box dropdown-box--hover"><a href="#" class="header-nav__link dropdown-box__btn"><span class="dropdown-box__label">Справочники</span> <span class="dropdown-box__caret"><svg focusable="false" width="16" height="16" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M1.88 3.33337L8 9.44004L14.12 3.33337L16 5.21337L8 13.2134L0 5.21337L1.88 3.33337Z" fill="currentColor"/></svg></span></a><div class="dropdown-box__container"><ul class="dropdown-box__container-inner"><li class="dropdown-box__item"><a href="#" class="dropdown-box__link">Ссылка</a></li><li class="dropdown-box__item active"><span class="dropdown-box__link">Ссылка и очень длинное название</span></li><li class="dropdown-box__item"><a href="#" class="dropdown-box__link">Ссылка</a></li><li class="dropdown-box__item"><a href="#" class="dropdown-box__link">Ссылка</a></li></ul></div></li><li class="header-nav__item"><a href="#" class="header-nav__link">Настройки</a></li></ul></nav><div class="header-menu__icon"><svg class="ham hamRotate ham4" viewbox="0 0 100 100" width="50" onclick="this.closest('.header__menu').classList.toggle('menu-opened')"><path class="line top" d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"/><path class="line middle" d="m 70,50 h -40"/><path class="line bottom" d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"/></svg></div></div></div></header><main class="page__content"><div class="layout-main"><div class="container gap-t-30"><section class="section"><h1 class="section__header">Создание заказа</h1><div class="section__content"><article class="form-section"><h2 class="form-section__title">Данные пациента</h2><div class="form-section__content bg-white"><div id="orderForm"></div><script>document.addEventListener('DOMContentLoaded', () => {
+                    window._vueClientForm = new Vue({
                       el: '#orderForm',
                       template: `
                         <v-app>
@@ -8,34 +8,34 @@
                               <v-row>
                                 <v-col cols="12" md="6" lg="4">
                                   <v-text-field
-                                      v-model="OrderForm.num"
-                                      label="№ квитанции"
-                                      placeholder="Подсказка"
-                                      hide-details="auto"
-                                      clearable
+                                    v-model="OrderForm.num"
+                                    label="№ квитанции"
+                                    placeholder="Подсказка"
+                                    hide-details="auto"
+                                    clearable
                                   />
                                 </v-col>
                                 <v-col cols="12" md="6" lg="4">
                                   <v-menu
-                                      ref="CalendarDate"
-                                      v-model="CalendarDate"
-                                      :close-on-content-click="false"
-                                      :return-value.sync="OrderForm.kvit_date"
-                                      transition="scale-transition"
-                                      offset-y
-                                      min-width="auto"
+                                    ref="CalendarDate"
+                                    v-model="CalendarDate"
+                                    :close-on-content-click="false"
+                                    :return-value.sync="OrderForm.kvit_date"
+                                    transition="scale-transition"
+                                    offset-y
+                                    min-width="auto"
                                   >
                                     <template v-slot:activator="{ on, attrs }">
                                       <v-text-field
-                                          v-model="OrderForm.kvit_date"
-                                          label="Выбрать дату"
-                                          placeholder="dd/mm/yyyy"
-                                          prepend-icon="mdi-calendar"
-                                          readonly
-                                          v-bind="attrs"
-                                          v-on="on"
-                                          hide-details="auto"
-                                          clearable
+                                        v-model="OrderForm.kvit_date"
+                                        label="Выбрать дату"
+                                        placeholder="dd/mm/yyyy"
+                                        prepend-icon="mdi-calendar"
+                                        readonly
+                                        v-bind="attrs"
+                                        v-on="on"
+                                        hide-details="auto"
+                                        clearable
                                       />
                                     </template>
                                     <v-date-picker v-model="OrderForm.kvit_date" no-title scrollable>
@@ -50,51 +50,56 @@
                                   </v-menu>
                                 </v-col>
                                 <v-col cols="12" sm="6" lg="4">
-                                  <v-text-field
-                                      v-model="OrderForm.dir_dr"
-                                      label="Направивший врач"
-                                      prepend-icon="mdi-magnify"
-                                      append-outer-icon="mdi-account-plus"
-                                      hide-details="auto"
-                                      clearable
+                                  <v-autocomplete
+                                    v-model="OrderForm.dir_dr"
+                                    label="Направивший врач"
+                                    prepend-icon="mdi-magnify"
+                                    append-outer-icon="mdi-account-plus"
+                                    :items="autocomplete.autocomplete.dir_dr"
+                                    item-text="name"
+                                    hide-details="auto"
+                                    clearable
                                   />
                                 </v-col>
                                 <v-col cols="12">
                                   <v-autocomplete
-                                      v-model="OrderForm.fio"
-                                      label="Пациент ФИО"
-                                      :items="people"
+                                      label="ФИО пациента"
+                                      :items="autocomplete.autocomplete.fio"
+                                      :item-text="item => item.name + ' - ' + moment(item.birthdate).format('DD.MM.YYYY')"
                                       prepend-icon="mdi-magnify"
                                       hide-details="auto"
+                                      clearable
                                   />
                                 </v-col>
                                 <v-col cols="12" sm="6" lg="4">
                                   <v-select
-                                      v-model="OrderForm.gender"
-                                      label="Пол"
-                                      :items="gender"
-                                      hide-details="auto"
+                                    v-model="OrderForm.gender"
+                                    label="Пол"
+                                    :menu-props="{ bottom: true, offsetY: true }"
+                                    :items="selectors.selectors.gender"
+                                    item-text="name"
+                                    hide-details="auto"
                                   />
                                 </v-col>
                                 <v-col cols="12" md="6" lg="4">
                                   <v-menu
-                                      ref="CalendarDateBirthday"
-                                      v-model="CalendarDateBirthday"
-                                      :close-on-content-click="false"
-                                      :return-value.sync="OrderForm.birthdate"
-                                      transition="scale-transition"
-                                      offset-y
-                                      min-width="auto"
+                                    ref="CalendarDateBirthday"
+                                    v-model="CalendarDateBirthday"
+                                    :close-on-content-click="false"
+                                    :return-value.sync="OrderForm.birthdate"
+                                    transition="scale-transition"
+                                    offset-y
+                                    min-width="auto"
                                   >
                                     <template v-slot:activator="{ on, attrs }">
                                       <v-text-field
-                                          v-model="OrderForm.birthdate"
-                                          label="Дата рождения"
-                                          prepend-icon="mdi-calendar"
-                                          readonly
-                                          v-bind="attrs"
-                                          v-on="on"
-                                          hide-details="auto"
+                                        v-model="OrderForm.birthdate"
+                                        label="Дата рождения"
+                                        prepend-icon="mdi-calendar"
+                                        readonly
+                                        v-bind="attrs"
+                                        v-on="on"
+                                        hide-details="auto"
                                       />
                                     </template>
                                     <v-date-picker v-model="OrderForm.birthdate" no-title scrollable>
@@ -110,88 +115,90 @@
                                 </v-col>
                                 <v-col cols="12" md="6" lg="4">
                                   <v-text-field
-                                      v-model="OrderForm.age"
-                                      label="Возраст"
-                                      hide-details="auto"
+                                    v-model="OrderForm.age"
+                                    label="Возраст"
+                                    hide-details="auto"
                                   />
                                 </v-col>
                                 <v-col cols="12" lg="6">
                                   <v-text-field
-                                      v-model="OrderForm.address"
-                                      label="Адрес"
-                                      hide-details="auto"
+                                    v-model="OrderForm.address"
+                                    label="Адрес"
+                                    hide-details="auto"
                                   />
                                 </v-col>
                                 <v-col cols="12" lg="6">
                                   <v-text-field
-                                      v-model="OrderForm.phone"
-                                      label="Телефон"
-                                      hide-details="auto"
+                                    v-model="OrderForm.phone"
+                                    label="Телефон"
+                                    hide-details="auto"
                                   />
                                 </v-col>
                                 <v-col cols="12" lg="6">
                                   <v-text-field
-                                      v-model="OrderForm.cellphone"
-                                      label="Моб.телефон"
-                                      hide-details="auto"
+                                    v-model="OrderForm.cellphone"
+                                    label="Моб.телефон"
+                                    hide-details="auto"
                                   />
                                 </v-col>
                                 <v-col cols="12" lg="6">
                                   <v-text-field
-                                      v-model="OrderForm.email"
-                                      label="Email"
-                                      hide-details="auto"
+                                    v-model="OrderForm.email"
+                                    label="Email"
+                                    hide-details="auto"
                                   />
                                 </v-col>
                                 <v-col cols="12">
                                   <v-checkbox
-                                      v-model="OrderForm.is_sms"
-                                      color="#64219e"
-                                      label="Смс о готовности"
-                                      hide-details="auto"
+                                    v-model="OrderForm.is_sms"
+                                    color="#64219e"
+                                    label="Смс о готовности"
+                                    hide-details="auto"
                                   />
                                 </v-col>
                                 <v-col cols="12" sm="6" lg="4">
                                   <v-select
-                                      v-model="OrderForm.credential"
-                                      :items="document"
-                                      label="Документ, удостоверяющий личность"
-                                      hide-details="auto"
+                                    v-model="OrderForm.credential"
+                                    :items="selectors.selectors.credential"
+                                    item-text="name"
+                                    label="Документ, удостоверяющий личность"
+                                    :menu-props="{ bottom: true, offsetY: true }"
+                                    hide-details="auto"
                                   />
                                 </v-col>
                                 <v-col cols="12" md="6" lg="4">
                                   <v-text-field
-                                      v-model="OrderForm.cred_serie"
-                                      label="Серия"
-                                      hide-details="auto"
+                                    v-model="OrderForm.cred_serie"
+                                    label="Серия"
+                                    hide-details="auto"
                                   />
                                 </v-col>
                                 <v-col cols="12" md="6" lg="4">
                                   <v-text-field
-                                      v-model="OrderForm.cred_number"
-                                      label="Номер серии"
-                                      hide-details="auto"
+                                    v-model="OrderForm.cred_number"
+                                    label="Номер серии"
+                                    hide-details="auto"
                                   />
                                 </v-col>
                                 <v-col cols="12" md="6" lg="4">
                                   <v-menu
-                                      ref="CalendarDateRegistrationPassport"
-                                      v-model="CalendarDateRegistrationPassport"
-                                      :close-on-content-click="false"
-                                      :return-value.sync="OrderForm.kvit_date"
-                                      transition="scale-transition"
-                                      offset-y
-                                      min-width="auto"
+                                    ref="CalendarDateRegistrationPassport"
+                                    v-model="CalendarDateRegistrationPassport"
+                                    :close-on-content-click="false"
+                                    :return-value.sync="OrderForm.kvit_date"
+                                    transition="scale-transition"
+                                    offset-y
+                                    min-width="auto"
                                   >
                                     <template v-slot:activator="{ on, attrs }">
                                       <v-text-field
-                                          v-model="OrderForm.cred_when"
-                                          label="Дата выдачи документа"
-                                          prepend-icon="mdi-calendar"
-                                          readonly
-                                          v-bind="attrs"
-                                          v-on="on"
-                                          hide-details="auto"
+                                        v-model="OrderForm.cred_when"
+                                        label="Дата выдачи документа"
+                                        prepend-icon="mdi-calendar"
+                                        readonly
+                                        v-bind="attrs"
+                                        v-on="on"
+                                        hide-details="auto"
                                       />
                                     </template>
                                     <v-date-picker v-model="OrderForm.cred_when" no-title scrollable>
@@ -207,16 +214,16 @@
                                 </v-col>
                                 <v-col cols="12" md="6" lg="4">
                                   <v-text-field
-                                      v-model="OrderForm.cred_whom"
-                                      label="Кем выдан"
-                                      hide-details="auto"
+                                    v-model="OrderForm.cred_whom"
+                                    label="Кем выдан"
+                                    hide-details="auto"
                                   />
                                 </v-col>
                                 <v-col cols="12" sm="6" lg="4">
                                   <v-text-field
-                                      v-model="OrderForm.facil_code"
-                                      label="Код подразделения"
-                                      hide-details="auto"
+                                    v-model="OrderForm.facil_code"
+                                    label="Код подразделения"
+                                    hide-details="auto"
                                   />
                                 </v-col>
                               </v-row>
@@ -233,7 +240,7 @@
                             light: {
                               primary: '#64219e',
                             },
-                          }
+                          },
                         },
                         icons: {
                           iconfont: 'mdi',
@@ -241,9 +248,167 @@
                       }),
                       data: () => ({
                         date: new Date().toISOString().substr(0, 10),
-                        people: ['Sandra Adams', 'Sandra Adams2', 'AMAD DAKDKAD', 'какой-то челик'],
-                        document: ['Паспорт', 'Водительское', 'Завещание', 'Steam аккаунт'],
-                        gender: ['Мужской', 'Женский', 'Феминистка'],
+                        selectors: {
+                          'selectors': {
+                            'gender': [
+                              {
+                                'id': '0',
+                                'name': 'М',
+                              },
+                              {
+                                'id': '1',
+                                'name': 'Ж',
+                              },
+                            ],
+                            'credential': [
+                              {
+                                'id': '',
+                                'name': '-',
+                              },
+                              {
+                                'id': 'паспорт',
+                                'name': 'паспорт',
+                              },
+                              {
+                                'id': 'права',
+                                'name': 'права',
+                              },
+                              {
+                                'id': 'другой',
+                                'name': 'другой',
+                              },
+                            ],
+                            'pay_type': [
+                              {
+                                'id': '6',
+                                'name': 'карта',
+                              },
+                              {
+                                'id': '4',
+                                'name': 'наличные',
+                              },
+                              {
+                                'id': '7',
+                                'name': 'рс',
+                              },
+                            ],
+                          },
+                          'btn_print': [
+                            {
+                              'id': '10',
+                              'name': 'Договор',
+                              'href': 'print1.php?a=b',
+                            },
+                            {
+                              'id': '12',
+                              'name': 'Согласие на ВИЧ',
+                              'href': 'print2.php?a=c',
+                            },
+                            {
+                              'id': '15',
+                              'name': 'Разрешение на e-mail',
+                              'href': 'print3.php?a=d',
+                            },
+                          ],
+                        },
+                        autocomplete: {
+                          'autocomplete': {
+                            'dir_dr': [
+                              {
+                                'id': '39',
+                                'name': '[14603] - Попов Юрий Иванович - акушер-гинеколог',
+                              },
+                              {
+                                'id': '41',
+                                'name': '[14607] - Сидорова Нина Ивановна - терапевт',
+                              },
+                              {
+                                'id': '60',
+                                'name': '[11584] - Козлов Игорь Иванович - уролог',
+                              },
+                              {
+                                'id': '72',
+                                'name': '[15608] - Колесникова Наталья Ивановна - терапевт',
+                              },
+                              {
+                                'id': '237',
+                                'name': '[12367] - Хромова Светлана Ивановна - гинеколог',
+                              },
+                              {
+                                'id': '319',
+                                'name': '[12072] - Моева Юлия Ивановна - ревматолог',
+                              },
+                              {
+                                'id': '336',
+                                'name': '[11574] - Заборов Виктор Иванович - терапевт',
+                              },
+                            ],
+                            'fio': [
+                              {
+                                'id': '516',
+                                'name': 'Морозова Ольга Петровна',
+                                'birthdate': '1980-06-02',
+                                'cellphone': '79506000102',
+                              },
+                              {
+                                'id': '602',
+                                'name': 'Морозова Елена Николаевна',
+                                'birthdate': '1980-05-01',
+                                'cellphone': '79506010203',
+                              },
+                              {
+                                'id': '736',
+                                'name': 'Морозов Александр Васильевич',
+                                'birthdate': '1960-10-28',
+                                'cellphone': '79506020304',
+                              },
+                              {
+                                'id': '1015',
+                                'name': 'Морозов Владимир Владимирович',
+                                'birthdate': '2010-05-24',
+                                'cellphone': '79506030405',
+                              },
+                              {
+                                'id': '1126',
+                                'name': 'Морозова Людмила Васильевна',
+                                'birthdate': '1980-11-14',
+                                'cellphone': '79506050506',
+                              },
+                            ],
+                            'service_search': [
+                              {
+                                'id': '1',
+                                'code': 'К1',
+                                'name': 'Общий анализ крови с лейкоцитарной формулой + СОЭ',
+                                'name_other': 'Общ.анализ крови+СОЭ',
+                              },
+                              {
+                                'id': '16',
+                                'code': 'К12',
+                                'name': 'Исследование кала на расширенный спектр яйц гельминтов и простейших',
+                                'name_other': 'Исследование кала на расширенный спектр яйц гельминтов и простейших',
+                              },
+                              {
+                                'id': '2076',
+                                'code': 'К13',
+                                'name': 'Исследование кала на расширенный спектр я гл и прост. (обогащенной средой Parasep)',
+                                'name_other': 'Яйца глист. спектр (Parasep)',
+                              },
+                              {
+                                'id': '2077',
+                                'code': 'К133',
+                                'name': 'Подсчет тромбоцитов по Фонио',
+                                'name_other': 'Фонио',
+                              },
+                              {
+                                'id': '2',
+                                'code': 'К134',
+                                'name': 'Определение ретикулоцитов',
+                                'name_other': 'Ретикулоцитов определение',
+                              },
+                            ],
+                          },
+                        },
                         CalendarDate: false,
                         CalendarDateBirthday: false,
                         CalendarDateRegistrationPassport: false,
@@ -270,19 +435,18 @@
                       }),
                       methods: {
                         sendOrderForm() {
-                          console.log('workButton!', this.OrderForm);
+                          console.log('data: ', this.OrderForm);
+                          return this.OrderForm;
                         },
                       },
                       computed: {
                         startDate() {
                           return this.OrderForm.kvit_date;
-                          // if (this.OrderForm.kvit_date) {
-                          //   return this.$moment(new Date(this.entityContractForm.doc_date)).format('DD.MM.YYYY');
-                          // }
-                          // return null
                         },
                       },
+                      moment: moment
                     });
+              
                   });</script></div></article><article class="form-section"><div class="form-section__content bg-white form-section__content--equal"><div id="orderFormButtons"></div><script>document.addEventListener('DOMContentLoaded', () => {
                     const vueOrderFormButtons = new Vue({
                       el: '#orderFormButtons',
@@ -318,18 +482,12 @@
                             light: {
                               primary: '#64219e',
                             },
-                          }
+                          },
                         },
                       }),
-                      data: () => ({
-              
-                      }),
-                      methods: {
-              
-                      },
-                      computed: {
-              
-                      },
+                      data: () => ({}),
+                      methods: {},
+                      computed: {},
                     });
                   });</script></div></article><article class="form-section"><h2 class="form-section__title">Услуги квитанции</h2><div class="form-section__content bg-white"><div class="text-uppercase color-secondary"><p>Услуги: <span>0</span>, комплексы <span>0</span></p></div><div id="orderTable"></div><script>document.addEventListener('DOMContentLoaded', () => {
                     new Vue({
@@ -337,82 +495,62 @@
                       template: `
                         <v-app>
                           <v-card flat>
-                            <v-card-text class="px-0">
-                              <v-container>
-                                <v-row>
-                                  <v-col cols="6">
-                                    <v-text-field
-                                        label="№ квитанции"
-                                        hide-details="auto"
-                                    />
-                                  </v-col>
-                                  <v-col cols="6">
-                                    <v-text-field
-                                        label="Выбрать дату"
-                                        append-icon="mdi-calendar"
-                                        hide-details="auto"
-                                        readonly
-                                    />
-                                  </v-col>
-                                  <v-col cols="12">
-                                    <v-text-field
-                                        label="Направивший врач"
-                                        append-icon="mdi-magnify"
-                                        hide-details="auto"
-                                    />
-                                  </v-col>
-                                  <v-col cols="12">
-                                    <v-text-field
-                                        label="Фио пациента"
-                                        append-icon="mdi-magnify"
-                                        hide-details="auto"
-                                    />
-                                  </v-col>
-                                </v-row>
-                              </v-container>
-                            </v-card-text>
-                          </v-card>
+                            <v-card-actions class="mb-4 mt-4">
+                              <v-row>
+                                <v-col cols="auto">
+                                  <v-btn depressed color="primary" @click="payment()">
+                                    Оплатить
+                                  </v-btn>
+                                </v-col>
+                                <v-col cols="auto">
+                                  <v-btn depressed color="primary" @click="log(_vueClientForm.$data.OrderForm)">
+                                    Сохранить и закрыть
+                                  </v-btn>
+                                </v-col>
+                              </v-row>
+                            </v-card-actions>
               
-                          <v-card class="mt-5" flat>
-                            <v-data-table
-                                dense
-                                :headers="headers"
-                                :items="desserts"
-                                sort-by="calories"
-                                class="elevation-1"
-                                :search="search"
-                            >
-                              <template v-slot:top>
-                                <v-card-actions class="mb-4">
-                                  <v-container class="col-auto pl-0 pr-10">
-                                    <v-row>
-                                      <v-col cols="auto">
-                                        <v-btn depressed color="primary">
-                                          Оплатить
-                                        </v-btn>
-                                      </v-col>
-                                      <v-col cols="auto">
-                                        <v-btn depressed color="primary">
-                                          Сохранить и закрыть
-                                        </v-btn>
-                                      </v-col>
-                                      <v-col cols="auto">
-                                        <v-btn depressed color="primary">
-                                          Отмена
-                                        </v-btn>
-                                      </v-col>
-                                    </v-row>
-                                  </v-container>
+                            <v-container>
+                              <v-row>
+                                <v-col>
                                   <v-text-field
-                                      class="mt-0 pt-0"
-                                      v-model="search"
-                                      append-icon="mdi-magnify"
-                                      label="Поиск"
-                                      single-line
-                                      hide-details="auto"
-                                  ></v-text-field>
-                                </v-card-actions>
-                              </template>
+                                    label="Итого"
+                                    append-outer-icon="mdi-currency-rub"
+                                  />
+                                </v-col>
+                                <v-col>
+                                  <v-text-field
+                                    label="Статус"
+                                    value="НЕ ОПЛАЧЕНО"
+                                    disabled
+                                  />
+                                </v-col>
+                                <v-col>
+                                  <v-select
+                                    :items="selectors.selectors.pay_type"
+                                    item-text="name"
+                                    :menu-props="{ bottom: true, offsetY: true }"
+                                    label="Тип оплаты"
+                                  />
+                                </v-col>
+                              </v-row>
+                            </v-container>
+              
+                            <v-text-field
+                              class="pr-3 pl-3 pb-5"
+                              v-model="search"
+                              prepend-icon="mdi-magnify"
+                              label="Поиск услуги из прейскуранта"
+                              hide-details="auto"
+                            />
+              
+                            <v-data-table
+                              :headers="headers"
+                              :items="desserts"
+                              sort-by="calories"
+                              class="elevation-1"
+                              :search="search"
+                            >
                               <template v-slot:item.delete_record="{ item }">
                                 <v-icon small @click="deleteItemConfirm(item)">mdi-delete</v-icon>
                               </template>
@@ -429,15 +567,27 @@
                             light: {
                               primary: '#64219e',
                             },
-                          }
+                          },
                         },
                         icons: {
                           iconfont: 'mdi',
                         },
                       }),
+                      methods: {
+                        deleteItemConfirm() {
+                          this.desserts.splice(this.editedIndex, 1);
+                        },
+                        payment() {
+                          return alert('Оплата');
+                        },
+                        log(value) {
+                          return console.log('click: ', value);
+                        },
+                      },
                       data: () => ({
                         search: '',
                         editedIndex: -1,
+                        paymentType: ['Наличные', 'Карта', 'Терминал', 'Кредит'],
                         headers: [
                           {
                             text: 'Код',
@@ -452,7 +602,7 @@
                           { text: 'Цена', value: 'price' },
                           { text: 'Сумма', value: 'sum' },
                           { text: '+/-(%)', value: 'percent' },
-                          { text: "Скидка/Надбавка", value: 'discount' },
+                          { text: 'Скидка/Надбавка', value: 'discount' },
                           { text: 'К оплате', value: 'bill' },
                           { text: 'Срок вып. дни', value: 'count_days' },
                           { text: 'Удалить', value: 'delete_record' },
@@ -462,7 +612,7 @@
                             code: 'K1',
                             name: 'Общий анализ крови с лейкоцитами',
                             count: 2,
-                            type_price: "Касса",
+                            type_price: 'Касса',
                             currency: 'Рубль',
                             price: 40.000,
                             sum: 40.000,
@@ -476,7 +626,7 @@
                             code: 'K1',
                             name: 'Исследование кала на расширенный спектр...',
                             count: 2,
-                            type_price: "Касса",
+                            type_price: 'Касса',
                             currency: 'Рубль',
                             price: 40.000,
                             sum: 40.000,
@@ -490,7 +640,7 @@
                             code: 'K1',
                             name: 'Подсчет тромбоцитов',
                             count: 2,
-                            type_price: "Касса",
+                            type_price: 'Касса',
                             currency: 'Рубль',
                             price: 40.000,
                             sum: 40.000,
@@ -504,7 +654,7 @@
                             code: 'K1',
                             name: 'Определение ретикулоцитов',
                             count: 2,
-                            type_price: "Касса",
+                            type_price: 'Касса',
                             currency: 'Рубль',
                             price: 40.000,
                             sum: 40.000,
@@ -518,7 +668,7 @@
                             code: 'K1',
                             name: 'Общий анализ крови с лейкоцитами',
                             count: 2,
-                            type_price: "Касса",
+                            type_price: 'Касса',
                             currency: 'Рубль',
                             price: 40.000,
                             sum: 40.000,
@@ -532,7 +682,7 @@
                             code: 'K1',
                             name: 'Общий анализ крови с лейкоцитами',
                             count: 2,
-                            type_price: "Касса",
+                            type_price: 'Касса',
                             currency: 'Рубль',
                             price: 40.000,
                             sum: 40.000,
@@ -543,11 +693,167 @@
                             delete_record: 2,
                           },
                         ],
-                      }),
-                      methods: {
-                        deleteItemConfirm() {
-                          this.desserts.splice(this.editedIndex, 1)
+                        selectors: {
+                          'selectors': {
+                            'gender': [
+                              {
+                                'id': '0',
+                                'name': 'М',
+                              },
+                              {
+                                'id': '1',
+                                'name': 'Ж',
+                              },
+                            ],
+                            'credential': [
+                              {
+                                'id': '',
+                                'name': '-',
+                              },
+                              {
+                                'id': 'паспорт',
+                                'name': 'паспорт',
+                              },
+                              {
+                                'id': 'права',
+                                'name': 'права',
+                              },
+                              {
+                                'id': 'другой',
+                                'name': 'другой',
+                              },
+                            ],
+                            'pay_type': [
+                              {
+                                'id': '6',
+                                'name': 'карта',
+                              },
+                              {
+                                'id': '4',
+                                'name': 'наличные',
+                              },
+                              {
+                                'id': '7',
+                                'name': 'рс',
+                              },
+                            ],
+                          },
+                          'btn_print': [
+                            {
+                              'id': '10',
+                              'name': 'Договор',
+                              'href': 'print1.php?a=b',
+                            },
+                            {
+                              'id': '12',
+                              'name': 'Согласие на ВИЧ',
+                              'href': 'print2.php?a=c',
+                            },
+                            {
+                              'id': '15',
+                              'name': 'Разрешение на e-mail',
+                              'href': 'print3.php?a=d',
+                            },
+                          ],
                         },
-                      },
+                        autocomplete: {
+                          'autocomplete': {
+                            'dir_dr': [
+                              {
+                                'id': '39',
+                                'name': '[14603] - Попов Юрий Иванович - акушер-гинеколог',
+                              },
+                              {
+                                'id': '41',
+                                'name': '[14607] - Сидорова Нина Ивановна - терапевт',
+                              },
+                              {
+                                'id': '60',
+                                'name': '[11584] - Козлов Игорь Иванович - уролог',
+                              },
+                              {
+                                'id': '72',
+                                'name': '[15608] - Колесникова Наталья Ивановна - терапевт',
+                              },
+                              {
+                                'id': '237',
+                                'name': '[12367] - Хромова Светлана Ивановна - гинеколог',
+                              },
+                              {
+                                'id': '319',
+                                'name': '[12072] - Моева Юлия Ивановна - ревматолог',
+                              },
+                              {
+                                'id': '336',
+                                'name': '[11574] - Заборов Виктор Иванович - терапевт',
+                              },
+                            ],
+                            'fio': [
+                              {
+                                'id': '516',
+                                'name': 'Морозова Ольга Петровна',
+                                'birthdate': '1980-06-02',
+                                'cellphone': '79506000102',
+                              },
+                              {
+                                'id': '602',
+                                'name': 'Морозова Елена Николаевна',
+                                'birthdate': '1980-05-01',
+                                'cellphone': '79506010203',
+                              },
+                              {
+                                'id': '736',
+                                'name': 'Морозов Александр Васильевич',
+                                'birthdate': '1960-10-28',
+                                'cellphone': '79506020304',
+                              },
+                              {
+                                'id': '1015',
+                                'name': 'Морозов Владимир Владимирович',
+                                'birthdate': '2010-05-24',
+                                'cellphone': '79506030405',
+                              },
+                              {
+                                'id': '1126',
+                                'name': 'Морозова Людмила Васильевна',
+                                'birthdate': '1980-11-14',
+                                'cellphone': '79506050506',
+                              },
+                            ],
+                            'service_search': [
+                              {
+                                'id': '1',
+                                'code': 'К1',
+                                'name': 'Общий анализ крови с лейкоцитарной формулой + СОЭ',
+                                'name_other': 'Общ.анализ крови+СОЭ',
+                              },
+                              {
+                                'id': '16',
+                                'code': 'К12',
+                                'name': 'Исследование кала на расширенный спектр яйц гельминтов и простейших',
+                                'name_other': 'Исследование кала на расширенный спектр яйц гельминтов и простейших',
+                              },
+                              {
+                                'id': '2076',
+                                'code': 'К13',
+                                'name': 'Исследование кала на расширенный спектр я гл и прост. (обогащенной средой Parasep)',
+                                'name_other': 'Яйца глист. спектр (Parasep)',
+                              },
+                              {
+                                'id': '2077',
+                                'code': 'К133',
+                                'name': 'Подсчет тромбоцитов по Фонио',
+                                'name_other': 'Фонио',
+                              },
+                              {
+                                'id': '2',
+                                'code': 'К134',
+                                'name': 'Определение ретикулоцитов',
+                                'name_other': 'Ретикулоцитов определение',
+                              },
+                            ],
+                          },
+                        },
+                      }),
                     });
-                  });</script></div></article></div></section></div></div></main><footer class="footer page__footer"><div class="footer-top container"><div class="footer-top__brand"><p class="footer-top__brand-title">Процедурный кабинет v.3.25 - [[ТУЛА-3]]</p></div></div></footer></div><script src="../scripts/vendors.js?v=1671" defer="defer"></script><script src="../scripts/main.js?v=1671" defer="defer"></script></body></html><!-- Scripts --><script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.min.js" defer="defer"></script><script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.js" defer="defer"></script>
+                  });</script></div></article></div></section></div></div></main><footer class="footer page__footer"><div class="footer-top container"><div class="footer-top__brand"><p class="footer-top__brand-title">Процедурный кабинет v.3.25 - [[ТУЛА-3]]</p></div></div></footer></div><script src="../scripts/vendors.js?v=3256" defer="defer"></script><script src="../scripts/main.js?v=3256" defer="defer"></script></body></html><!-- Scripts --><script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.min.js" defer="defer"></script><script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.js" defer="defer"></script>
