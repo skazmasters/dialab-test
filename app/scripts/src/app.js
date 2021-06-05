@@ -1,9 +1,9 @@
 class App {
-  constructor () {
+  constructor() {
     this.addEvents();
   }
 
-  addEvents () {
+  addEvents() {
     document.addEventListener('DOMContentLoaded', e => {
       this.initLibs();
       this.initModules();
@@ -13,13 +13,13 @@ class App {
     });
   }
 
-  initLibs () {
-    // window.svg4everybody();
+  initLibs() {
+
   }
 
-  initModules () {
+  initModules() {
     disablingPreloader();
   }
 }
 
-const app = new App();
+new App();

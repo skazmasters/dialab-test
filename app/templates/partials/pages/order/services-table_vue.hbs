@@ -3,92 +3,73 @@
     <p>Услуги: <span>0</span>, комплексы <span>0</span></p>
   </div>
 
-  <div id="orderTable"></div>
+  <div id="orderTable">
+    <v-app>
+      <v-card flat>
+        <v-card-actions class="mb-4 mt-4">
+          <v-row>
+            <v-col cols="auto">
+              <v-btn depressed color="primary" @click="payment()">
+                Оплатить
+              </v-btn>
+            </v-col>
+            <v-col cols="auto">
+              <v-btn depressed color="primary" @click="log(_vueClientForm.$data.OrderForm)">
+                Сохранить и закрыть
+              </v-btn>
+            </v-col>
+          </v-row>
+        </v-card-actions>
+
+        <v-container>
+          <v-row>
+            <v-col>
+              <v-text-field
+                label="Итого"
+                append-outer-icon="mdi-currency-rub"></v-text-field>
+            </v-col>
+            <v-col>
+              <v-text-field
+                label="Статус"
+                value="НЕ ОПЛАЧЕНО"
+                disabled></v-text-field>
+            </v-col>
+            <v-col>
+              <v-select
+                :items="selectors.selectors.pay_type"
+                item-text="name"
+                :menu-props="{ bottom: true, offsetY: true }"
+                label="Тип оплаты"></v-select>
+            </v-col>
+          </v-row>
+        </v-container>
+
+        <v-text-field
+          class="pr-3 pl-3 pb-5"
+          v-model="search"
+          prepend-icon="mdi-magnify"
+          label="Поиск услуги из прейскуранта"
+          hide-details="auto"></v-text-field>
+
+        <v-data-table
+          :headers="headers"
+          :items="desserts"
+          sort-by="calories"
+          class="elevation-1"
+          :search="search"
+        >
+          <template v-slot:item.delete_record="{ item }">
+            <v-icon small @click="deleteItemConfirm(item)">mdi-delete</v-icon>
+          </template>
+        </v-data-table>
+      </v-card>
+    </v-app>
+  </div>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       new Vue({
         el: '#orderTable',
-        template: `
-          <v-app>
-            <v-card flat>
-              <v-card-actions class="mb-4 mt-4">
-                <v-row>
-                  <v-col cols="auto">
-                    <v-btn depressed color="primary" @click="payment()">
-                      Оплатить
-                    </v-btn>
-                  </v-col>
-                  <v-col cols="auto">
-                    <v-btn depressed color="primary" @click="log(_vueClientForm.$data.OrderForm)">
-                      Сохранить и закрыть
-                    </v-btn>
-                  </v-col>
-                </v-row>
-              </v-card-actions>
-
-              <v-container>
-                <v-row>
-                  <v-col>
-                    <v-text-field
-                      label="Итого"
-                      append-outer-icon="mdi-currency-rub"
-                    />
-                  </v-col>
-                  <v-col>
-                    <v-text-field
-                      label="Статус"
-                      value="НЕ ОПЛАЧЕНО"
-                      disabled
-                    />
-                  </v-col>
-                  <v-col>
-                    <v-select
-                      :items="selectors.selectors.pay_type"
-                      item-text="name"
-                      :menu-props="{ bottom: true, offsetY: true }"
-                      label="Тип оплаты"
-                    />
-                  </v-col>
-                </v-row>
-              </v-container>
-
-              <v-text-field
-                class="pr-3 pl-3 pb-5"
-                v-model="search"
-                prepend-icon="mdi-magnify"
-                label="Поиск услуги из прейскуранта"
-                hide-details="auto"
-              />
-
-              <v-data-table
-                :headers="headers"
-                :items="desserts"
-                sort-by="calories"
-                class="elevation-1"
-                :search="search"
-              >
-                <template v-slot:item.delete_record="{ item }">
-                  <v-icon small @click="deleteItemConfirm(item)">mdi-delete</v-icon>
-                </template>
-              </v-data-table>
-            </v-card>
-          </v-app>
-              `,
-        vuetify: new Vuetify({
-          theme: {
-            options: {
-              customProperties: true,
-            },
-            themes: {
-              light: {
-                primary: '#64219e',
-              },
-            },
-          },
-          icons: {
-            iconfont: 'mdi',
-          },
-        }),
+        vuetify: new Vuetify(vuetifyConfig),
         methods: {
           deleteItemConfirm() {
             this.desserts.splice(this.editedIndex, 1);
