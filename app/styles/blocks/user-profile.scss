@@ -13,4 +13,12 @@
       background-color: var(--color-primary-light-hover);
     }
   }
+
+  &__name {
+    max-width: 13ch;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+
+    white-space: nowrap;
+  }
 }

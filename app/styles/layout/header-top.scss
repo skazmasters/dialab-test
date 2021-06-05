@@ -3,6 +3,10 @@
   align-items: center;
   padding: 10px 0;
 
+  @include media(mobile) {
+    position: relative;
+  }
+
   &__logo {
     position: relative;
     flex: 0 0 120px;
@@ -21,5 +25,23 @@
 
   &__user {
     margin-left: auto;
+
+    @include media(mobile) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      z-index: z(modal)+1;
+      display: flex;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: visibility .35s ease, opacity .35s ease;
+
+      .menu-opened & {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
   }
 }

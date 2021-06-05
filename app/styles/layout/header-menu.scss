@@ -23,7 +23,7 @@
     }
   }
 
-  &__icon {
+  &__burger {
     @include media(tablet, up) {
       display: none;
     }
