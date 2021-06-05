@@ -30,22 +30,22 @@
     <div class="header__menu header-menu">
       <nav class="header-menu__nav header-nav">
         <ul class="header-nav__list">
-          <li class="header-nav__item active">
+          <li class="header-nav__item{{#ifCond activeLink 'Новая заявка'}} header-nav__item--active{{/ifCond}}">
             <span class="header-nav__link">Новая заявка</span>
           </li>
-          <li class="header-nav__item">
+          <li class="header-nav__item{{#ifCond activeLink 'Квитанции'}} header-nav__item--active{{/ifCond}}">
             <a href="#" class="header-nav__link">Квитанции</a>
           </li>
-          <li class="header-nav__item">
+          <li class="header-nav__item{{#ifCond activeLink 'Заказы'}} header-nav__item--active{{/ifCond}}">
             <a href="#" class="header-nav__link">Заказы</a>
           </li>
-          <li class="header-nav__item">
+          <li class="header-nav__item{{#ifCond activeLink 'Пациенты'}} header-nav__item--active{{/ifCond}}">
             <a href="#" class="header-nav__link">Пациенты</a>
           </li>
-          <li class="header-nav__item">
+          <li class="header-nav__item{{#ifCond activeLink 'Отчеты'}} header-nav__item--active{{/ifCond}}">
             <a href="#" class="header-nav__link">Отчеты</a>
           </li>
-          <li class="header-nav__item dropdown-box dropdown-box--hover">
+          <li class="header-nav__item dropdown-box dropdown-box--hover{{#ifCond activeLink 'Справочники'}} header-nav__item--active{{/ifCond}}">
             <a href="#" class="header-nav__link dropdown-box__btn">
               <span class="dropdown-box__label">Справочники</span>
               <span class="dropdown-box__caret">
@@ -72,7 +72,7 @@
               </ul>
             </div>
           </li>
-          <li class="header-nav__item">
+          <li class="header-nav__item{{#ifCond activeLink 'Настройки'}} header-nav__item--active{{/ifCond}}">
             <a href="#" class="header-nav__link">Настройки</a>
           </li>
         </ul>

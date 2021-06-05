@@ -111,6 +111,10 @@
 
   &--hover {
     &:hover {
+      .dropdown-box__btn {
+        cursor: pointer;
+      }
+
       .dropdown-box__caret {
         transform: scaleY(-1);
       }
