@@ -14,7 +14,8 @@ class App {
   }
 
   initLibs() {
-
+    window.moment = moment;
+    moment.locale('ru');
   }
 
   initModules() {

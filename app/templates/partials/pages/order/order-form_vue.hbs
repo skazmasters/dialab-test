@@ -34,7 +34,7 @@
                     hide-details="auto"
                     clearable></v-text-field>
                 </template>
-                <v-date-picker v-model="OrderForm.kvit_date" no-title scrollable>
+                <v-date-picker v-model="OrderForm.kvit_date" no-title scrollable locale="ru-ru">
                   <v-spacer></v-spacer>
                   <v-btn text color="primary" @click="CalendarDate = false">
                     Отмена
@@ -94,7 +94,7 @@
                     v-on="on"
                     hide-details="auto"></v-text-field>
                 </template>
-                <v-date-picker v-model="OrderForm.birthdate" no-title scrollable>
+                <v-date-picker v-model="OrderForm.birthdate" no-title scrollable locale="ru-ru">
                   <v-spacer></v-spacer>
                   <v-btn text color="primary" @click="CalendarDateBirthday = false">
                     Cancel
@@ -183,7 +183,7 @@
                     v-on="on"
                     hide-details="auto"></v-text-field>
                 </template>
-                <v-date-picker v-model="OrderForm.cred_when" no-title scrollable>
+                <v-date-picker v-model="OrderForm.cred_when" no-title scrollable locale="ru-ru">
                   <v-spacer></v-spacer>
                   <v-btn text color="primary" @click="CalendarDateRegistrationPassport = false">
                     Cancel
@@ -414,7 +414,7 @@
             return this.OrderForm.kvit_date;
           },
         },
-        moment: moment,
+        moment: moment.locale('ru'),
       });
     });
   </script>

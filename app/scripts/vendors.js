@@ -27,11 +27,8 @@ import 'lazysizes/plugins/object-fit/ls.object-fit';
 //   format: dateFormat,
 // };
 
-import moment from 'moment';
-import 'moment/locale/ru';
-
-window.moment = moment;
-moment.locale('ru');
+// import moment from 'moment';
+// import 'moment/locale/ru';
 
 lazySizes.cfg.lazyClass = 'lazy';
 lazySizes.cfg.srcAttr = 'data-original';
