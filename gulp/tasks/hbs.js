@@ -19,11 +19,11 @@ module.exports = () => {
       when: function(v1, operator, v2, options) {
         switch (operator) {
           case '==':
-            return (v1 == v2) ? options.fn(this) : options.inverse(this);
+            return (v1 === v2) ? options.fn(this) : options.inverse(this);
           case '===':
             return (v1 === v2) ? options.fn(this) : options.inverse(this);
           case '!=':
-            return (v1 != v2) ? options.fn(this) : options.inverse(this);
+            return (v1 !== v2) ? options.fn(this) : options.inverse(this);
           case '!==':
             return (v1 !== v2) ? options.fn(this) : options.inverse(this);
           case '<':
@@ -64,7 +64,7 @@ module.exports = () => {
 
     return $.gulp.src([
       `${$.config.sourcePath}/${$.config.hbsPath}/pages/*.hbs`,
-      `${$.config.sourcePath}/${$.config.hbsPath}/partials/core/ui-kit/page.hbs`,
+      // `${$.config.sourcePath}/${$.config.hbsPath}/partials/core/ui-kit/page.hbs`,
       `${$.config.sourcePath}/${$.config.hbsPath}/ajax/*.hbs`,
     ])
       .pipe($.gulpPlugin.plumber())
@@ -72,7 +72,7 @@ module.exports = () => {
       .pipe($.gulpPlugin.rename(path => {
         const string = path.basename;
 
-        if (string === 'page') path.basename = 'ui-toolkit';
+        // if (string === 'page') path.basename = 'ui-toolkit';
 
         path.dirname = '';
         path.extname = '.html';

@@ -2,8 +2,7 @@ module.exports = () => {
   $.gulp.task('prepareHtmlBuild', () => {
     // Исходные данные
     const metaImages = $.fs.readdirSync(`${$.config.sourcePath}/${$.config.metaPath}`); // изображения
-    const templates = $.fs.readdirSync(`${$.config.sourcePath}/${$.config.hbsPath}/pages`).concat([`page.hbs`]); // шаблоны страниц
-
+    const templates = $.fs.readdirSync(`${$.config.sourcePath}/${$.config.hbsPath}/pages`); // шаблоны страниц
 
     const html = []; // Массив генерируемых элементов
     const pages = {}; // Объект, содержащий информацию о всех страницах
@@ -30,9 +29,9 @@ module.exports = () => {
       // Получаем имя шаблона/страницы
       let pageName = template.substring(0, template.lastIndexOf('.'));
 
-      if(pageName === 'page') {
-        pageName = 'ui-toolkit';
-      }
+      // if(pageName === 'page') {
+      //   pageName = 'ui-toolkit';
+      // }
 
       // Проверяем, существует ли данная страница
       if (pages[pageName] === undefined) pages[pageName] = {};
@@ -74,15 +73,15 @@ module.exports = () => {
     }
 
     // Сортируем полученный массив элементов в соотсветствии с порядком, заданным в мета-изображениях
-    html.sort((a,b) => {
+    html.sort((a, b) => {
       let tempA = a.substring(a.lastIndexOf('.meta/') + 6, a.lastIndexOf('_'));
       let tempB = b.substring(b.lastIndexOf('.meta/') + 6, b.lastIndexOf('_'));
 
-      tempA.charAt(0) === '0'? tempA = tempA.slice(1) : tempA;
-      tempB.charAt(0) === '0'? tempB = tempB.slice(1) : tempB;
+      tempA.charAt(0) === '0' ? tempA = tempA.slice(1) : tempA;
+      tempB.charAt(0) === '0' ? tempB = tempB.slice(1) : tempB;
 
       return Number(tempA) - Number(tempB);
-    })
+    });
 
     const sourceTemplate = $.fs.readFileSync('./config/template-build.html').toString();
     // Получаем время сборки
@@ -116,7 +115,7 @@ module.exports = () => {
 
             jQuery(this).attr('src', src);
           });
-          jQuery('a').each(function () {
+          jQuery('a').each(function() {
             let href = jQuery(this).attr('href');
 
             if (!href || href.substr(0, 1) === '#' ||

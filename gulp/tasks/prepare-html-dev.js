@@ -1,6 +1,6 @@
 module.exports = () => {
   $.gulp.task('prepareHtmlDev', () => {
-    const templates = $.fs.readdirSync(`${$.config.sourcePath}/${$.config.hbsPath}/pages`).concat(['page.hbs']);
+    const templates = $.fs.readdirSync(`${$.config.sourcePath}/${$.config.hbsPath}/pages`);
     const html = [];
     const pages = {};
 
@@ -9,16 +9,16 @@ module.exports = () => {
 
       let pageName = template.substring(0, template.lastIndexOf('.'));
 
-      if(pageName === 'page') {
-        pageName = 'ui-toolkit';
-      }
+      console.log('pageName: ',pageName);
+      // if(pageName === 'page') {
+      //   pageName = 'ui-toolkit';
+      // }
 
       if (pages[pageName] === undefined) pages[pageName] = {};
 
       const file = $.fs
         .readFileSync(
-          `${$.config.sourcePath}/${$.config.hbsPath}/${pageName === 'ui-toolkit' ?
-            'partials/core/ui-kit/page' : 'pages/' + pageName}.hbs`,
+          `${$.config.sourcePath}/${$.config.hbsPath}/pages/${pageName}.hbs`,
         ).toString();
 
       if (file.indexOf('{{!') !== -1) pages[pageName].title = file.substring(3, file.indexOf('}}'));
